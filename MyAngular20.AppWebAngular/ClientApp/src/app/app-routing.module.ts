@@ -1,0 +1,50 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { GuardGuard } from './guard.guard';
+import { LoginComponent } from './login/login.component';
+import { ConfiguracoesEditComponent } from './main/admin/configuracoes-edit/configuracoes-edit.component';
+import { ConfiguracoesListComponent } from './main/admin/configuracoes-list/configuracoes-list.component';
+import { CategoriasEditComponent } from './main/categorias/categorias-edit/categorias-edit.component';
+import { CategoriasListComponent } from './main/categorias/categorias-list/categorias-list.component';
+import { ClientesEditComponent } from './main/clientes/clientes-edit/clientes-edit.component';
+import { ClientesListComponent } from './main/clientes/clientes-list/clientes-list.component';
+import { HomeComponent } from './main/home/home/home.component';
+import { MainComponent } from './main/main.component';
+import { NotificacoesComponent } from './main/notificacoes/notificacoes.component';
+import { PedidosDetailsComponent } from './main/pedidos/pedidos-details/pedidos-details.component';
+import { PedidosEditComponent } from './main/pedidos/pedidos-edit/pedidos-edit.component';
+import { PedidosListComponent } from './main/pedidos/pedidos-list/pedidos-list.component';
+import { ProdutosEditComponent } from './main/produtos/produtos-edit/produtos-edit.component';
+import { ProdutosListComponent } from './main/produtos/produtos-list/produtos-list.component';
+import { UnidadesEditComponent } from './main/unidades/unidades-edit/unidades-edit.component';
+import { UnidadesListComponent } from './main/unidades/unidades-list/unidades-list.component';
+import { UsuariosEditComponent } from './main/usuarios/usuarios-edit/usuarios-edit.component';
+import { UsuariosListComponent } from './main/usuarios/usuarios-list/usuarios-list.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: "full" },
+  { path: '', component: AppComponent, children: [{path: 'login', component:LoginComponent}] },
+
+  {
+    path: 'main', component: MainComponent, children: [
+      { path: 'home', component: HomeComponent, canActivate: [GuardGuard] },
+      { path: 'notificacoes', component: NotificacoesComponent, canActivate: [GuardGuard] },
+      { path: 'clientes', children: [{ path: 'list', component: ClientesListComponent }, { path: 'edit/:id', component: ClientesEditComponent }], canActivate: [GuardGuard] },
+      { path: 'usuarios', children: [{ path: 'list', component: UsuariosListComponent }, { path: 'edit/:id', component: UsuariosEditComponent }], canActivate: [GuardGuard] },
+      { path: 'produtos', children: [{ path: 'list', component: ProdutosListComponent }, { path: 'edit/:id', component: ProdutosEditComponent }], canActivate: [GuardGuard] },
+      { path: 'categorias', children: [{ path: 'list', component: CategoriasListComponent }, { path: 'edit/:id', component: CategoriasEditComponent }], canActivate: [GuardGuard] },
+      { path: 'pedidos', children: [{ path: 'list', component: PedidosListComponent }, { path: 'edit/:id', component: PedidosEditComponent }, { path: 'details/:id', component: PedidosDetailsComponent }], canActivate: [GuardGuard] },
+      { path: 'configuracoes', children: [{ path: 'list', component: ConfiguracoesListComponent }, { path: 'edit/:id', component: ConfiguracoesEditComponent }], canActivate: [GuardGuard] },
+      { path: 'unidades', children: [{ path: 'list', component: UnidadesListComponent }, { path: 'edit/:id', component: UnidadesEditComponent }], canActivate: [GuardGuard] },
+
+    ]
+  }
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

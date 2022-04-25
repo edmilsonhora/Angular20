@@ -1,0 +1,25 @@
+.posicao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid gray;
+  padding: 8px;
+  
+  /*width: 22rem;
+  margin: 130px auto;
+  border: 1px solid gray;
+  padding: 8px;*/
+}
+
+button, mat-form-field {
+  width: 350px;
+}
+
+mat-spinner{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index:10;
+}

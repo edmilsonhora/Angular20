@@ -1,0 +1,49 @@
+<span class="mat-title">Usuários-Edit</span>
+<mat-divider></mat-divider>
+<div style="text-align:end; font-size:x-small; color:dimgrey" *ngIf="entity.id !== 0">Última atualização por: {{entity.atualizadoPor}} em {{entity.dataAtualizacao}}</div>
+
+
+<app-avisos [erros]="erros"></app-avisos>
+
+<form #formUsuario="ngForm">
+  <mat-form-field class="ffied" appearance="fill">
+    <mat-label>Nome Completo:</mat-label>
+    <input matInput name="nomeCompleto" [(ngModel)]="entity.nomeCompleto" required>
+  </mat-form-field>
+
+  <mat-form-field class="ffied" appearance="fill">
+    <mat-label>User Name:</mat-label>
+    <input matInput name="usuarioNome" [(ngModel)]="entity.usuarioNome" required>
+  </mat-form-field>
+
+  <mat-form-field class="ffied" appearance="fill">
+    <mat-label>Email:</mat-label>
+    <input matInput name="email" [(ngModel)]="entity.email" required>
+  </mat-form-field>
+
+  <mat-form-field class="ffied" appearance="fill">
+    <mat-label>Perfil</mat-label>
+    <mat-select name="perfil" [(ngModel)]="entity.perfil" required>
+      <mat-option value="admin">
+        admin
+      </mat-option>
+      <mat-option value="user">
+        <span>user</span>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div *ngIf="entity.id === 0">
+    <mat-form-field class="ffied" appearance="fill">
+      <mat-label>Senha:</mat-label>
+      <input matInput name="senha" [(ngModel)]="entity.senha" required>
+    </mat-form-field>
+    <mat-form-field class="ffied" appearance="fill">
+      <mat-label>Confirma Senha:</mat-label>
+      <input matInput name="confirmaSenha" [(ngModel)]="entity.confirmaSenha" required>
+    </mat-form-field>
+  </div>
+  <p><mat-checkbox color="primary" name="ativo"  [(ngModel)]="entity.ativo">Ativo</mat-checkbox></p>
+
+  <br />
+  <button mat-raised-button color="primary" [disabled]="!formUsuario.valid" (click)="salvar()">Save</button>  &nbsp; | &nbsp;<a [routerLink]="['/main/usuarios/list']">Voltar para Lista</a>
+</form>

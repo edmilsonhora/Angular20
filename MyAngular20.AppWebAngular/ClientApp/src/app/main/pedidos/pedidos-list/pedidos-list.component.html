@@ -1,0 +1,47 @@
+<span class="mat-title">Pedidos-List</span>
+<mat-divider></mat-divider>
+<button mat-icon-button matTooltip="Novo Item" matTooltipPosition="after">
+  <mat-icon [routerLink]="['/main/pedidos/edit/0']">upload_file</mat-icon>
+</button>
+
+
+
+<table mat-table class="mat-elevation-z8" style="margin-bottom:8px" [dataSource]="pedidos">
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef style="width:46px; text-align:center">Edit</th>
+    <td mat-cell *matCellDef="let pedido">
+      <button mat-icon-button matTooltip="Edit" matTooltipPosition="after">
+        <mat-icon [routerLink]="['/main/pedidos/edit/', pedido.id]">mode_edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef style="margin-left:36px;">Nome</th>
+    <td mat-cell *matCellDef="let pedido">{{pedido.nome}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="cadastradoPor">
+    <th mat-header-cell *matHeaderCellDef>Cadastrado Por</th>
+    <td mat-cell *matCellDef="let pedido">{{pedido.cadastradoPor}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataCadastro">
+    <th mat-header-cell *matHeaderCellDef>Data Cadastro</th>
+    <td mat-cell *matCellDef="let pedido">{{pedido.dataCadastro}}</td>
+  </ng-container>
+  <ng-container matColumnDef="del">
+    <th mat-header-cell *matHeaderCellDef style="width:36px;">Del</th>
+    <td mat-cell *matCellDef="let pedido">
+      <button mat-icon-button matTooltip="Del">
+        <mat-icon [routerLink]="['/main/pedidos/edit/', pedido.id]">delete_outline</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+  <tr mat-row *matRowDef="let produtos;columns:colunas" class="example-element-row"></tr>
+
+</table>
+
+
+<app-lista-vazia></app-lista-vazia>
