@@ -1,0 +1,28 @@
+<div style=" height:100%; width:100%; position:absolute">
+
+
+  <div class="posicao">
+    <mat-card style="background-color:#086FD5; color: white"><span class="mat-title">My Angular App 2.0</span></mat-card>
+
+    <app-avisos [erros]="erros"></app-avisos>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Usuário:</mat-label>
+        <input matInput #myinput type="text" name="usuario" [(ngModel)]="loginData.usuario">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Senha:</mat-label>
+        <input matInput type="password" name="senha" [(ngModel)]="loginData.senha">
+      </mat-form-field>
+    </div>
+
+    <p><mat-checkbox color="primary" [(ngModel)]="loginData.manterLogado">Mantenha me logado</mat-checkbox></p>
+
+    <button type="button" (click)="autenticar()" mat-raised-button color="primary">LogIn</button>
+  </div>
+  <mat-spinner *ngIf="showLoader"></mat-spinner>
+
+</div>

@@ -1,0 +1,9 @@
+
+
+tr.example-element-row :hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row :active {
+  background: #efefef;
+}

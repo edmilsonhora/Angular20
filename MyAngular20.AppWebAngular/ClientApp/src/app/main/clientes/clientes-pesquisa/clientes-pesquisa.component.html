@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Pesquisar Clientes</h2>
+<mat-divider></mat-divider>
+<mat-form-field class="ffied" appearance="fill">
+  <mat-label>Name:</mat-label>
+  <input matInput type="text" [(ngModel)]="item.nome" (keyup)="pesquisar($event)">
+</mat-form-field>
+<mat-dialog-content>
+  <cdk-virtual-scroll-viewport style="height:250px" [itemSize]="6">
+    <mat-list>
+      <mat-list-item *cdkVirtualFor="let item of list">
+        <h3 matLine>{{item.nome}}</h3>
+        <p matLine>{{item.email}}</p>
+        <button mat-icon-button [mat-dialog-close]="item">
+          <mat-icon>
+            home
+          </mat-icon>
+        </button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </cdk-virtual-scroll-viewport>
+</mat-dialog-content>

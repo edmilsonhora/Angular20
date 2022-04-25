@@ -1,0 +1,49 @@
+<span class="mat-title">Configurações-List</span>
+<mat-divider></mat-divider>
+
+
+<button mat-icon-button matTooltip="Novo Item" matTooltipPosition="after">
+  <mat-icon [routerLink]="['/main/configuracoes/edit/0']">upload_file</mat-icon>
+</button>
+
+<table mat-table class="mat-elevation-z8" style="margin-bottom:8px" [dataSource]="configuracoes">
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef style="width:46px; text-align:center">Edit</th>
+    <td mat-cell *matCellDef="let configuracao">
+      <button mat-icon-button matTooltip="Edit" matTooltipPosition="after">
+        <mat-icon [routerLink]="['/main/configuracoes/edit/', configuracao.id]">mode_edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef style="margin-left:36px;">Nome</th>
+    <td mat-cell *matCellDef="let configuracao">{{configuracao.nome}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="cadastradoPor">
+    <th mat-header-cell *matHeaderCellDef>Cadastrado Por</th>
+    <td mat-cell *matCellDef="let configuracao">{{configuracao.cadastradoPor}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataCadastro">
+    <th mat-header-cell *matHeaderCellDef>Data Cadastro</th>
+    <td mat-cell *matCellDef="let configuracao">{{configuracao.dataCadastro}}</td>
+  </ng-container>
+  <ng-container matColumnDef="del">
+    <th mat-header-cell *matHeaderCellDef style="width:36px;">Del</th>
+    <td mat-cell *matCellDef="let configuracao">
+      <button mat-icon-button matTooltip="Del">
+        <mat-icon [routerLink]="['/main/configuracoes/edit/', configuracao.id]">delete_outline</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+  <tr mat-row *matRowDef="let categoria;columns:colunas" class="example-element-row"></tr>
+
+</table>
+<!--<app-lista-vazia *ngIf="paginador?.totalRegistros === 0" ></app-lista-vazia>
+<mat-paginator class="mat-elevation-z8" [length]="12" [pageSize]="4" [pageSizeOptions]="[4,8,12]" showFirstLastButtons>
+
+</mat-paginator>-->
+

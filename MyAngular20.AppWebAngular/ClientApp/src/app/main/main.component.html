@@ -1,0 +1,79 @@
+<mat-drawer-container style="height:100%">
+  <mat-drawer #sidenav mode="side" opened>
+    <div style="height:80px; text-align:center; margin-top:20px">
+      <h2>My App</h2>
+    </div>
+
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/main/home']"><mat-icon style="margin-right:5px">home</mat-icon> Home</a>
+      <a mat-list-item [routerLink]="['/main/clientes/list']"><mat-icon style="margin-right:5px">people</mat-icon> Clientes</a>
+      <a mat-list-item [routerLink]="['/main/produtos/list']"><mat-icon style="margin-right:5px">laptop_mac</mat-icon> Produtos</a>
+      <a mat-list-item [routerLink]="['/main/pedidos/list']"><mat-icon style="margin-right:5px">money</mat-icon> Pedidos</a>
+      <a mat-list-item [routerLink]="['/main/categorias/list']"><mat-icon style="margin-right:5px">list</mat-icon> Categorias</a>
+      <a mat-list-item [routerLink]="['/main/unidades/list']"><mat-icon style="margin-right:5px">square_foot</mat-icon> Un. Medida</a>
+      <a mat-list-item [routerLink]="['/main/usuarios/list']"><mat-icon style="margin-right:5px">person</mat-icon> Usuários</a>
+      <a mat-list-item [routerLink]="['/main/configuracoes/list']"  *ngIf="usuario.perfil === 'admin'"><mat-icon style="margin-right:5px">manage_accounts</mat-icon> Admin. </a>
+      <br /><br /> <br />
+      <a mat-list-item (click)="openDialog()"><mat-icon style="margin-right:5px">power_settings_new</mat-icon>Logoff</a>
+
+    </mat-nav-list>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button>
+          <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        </button>
+
+
+        <span class="example-spacer"></span>
+        <small>Usuário logado: &nbsp;{{usuario.usuarioNome}}</small> &nbsp;
+
+        <button mat-icon-button *ngIf="usuario.notificacoes > 0" [routerLink]="['/main/notificacoes']">
+          <mat-icon matBadge="{{usuario.notificacoes}}" matBadgeColor="accent" matBadgeOverlap="true">notifications</mat-icon>
+        </button>
+        &nbsp;
+        <div *ngIf="usuario.perfil === 'admin'">
+          <!--<span style="cursor:pointer" [matMenuTriggerFor]="menu">Admin</span>-->
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>
+              more_vert
+            </mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div style="margin-left: 40px; margin-right: 40px; margin-top:15px">
+
+      <router-outlet>
+
+      </router-outlet>
+    </div>
+
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<!--<h2>Main</h2>
+<button mat-button>teste</button>
+<router-outlet>
+
+</router-outlet>-->
+
+
