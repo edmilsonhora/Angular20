@@ -1,15 +1,11 @@
 ﻿using MyAngular20.ApplicationService.Adapters;
 using MyAngular20.ApplicationService.Views;
 using MyAngular20.DomainModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.ApplicationService.Facades
 {
-   public class UnidadeDeMedidaFacade: IUnidadeDeMedidaFacade
+    public class UnidadeDeMedidaFacade : IUnidadeDeMedidaFacade
     {
         private readonly IRepository _repository;
 
@@ -49,7 +45,7 @@ namespace MyAngular20.ApplicationService.Facades
             obj.Nome = view.Nome;
             obj.Simbolo = view.Simbolo;
             obj.AtualizadoPor = view.AtualizadoPor;
-           
+
             obj.RegistraAlteracao();
 
             obj.Validar();

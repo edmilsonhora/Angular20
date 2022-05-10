@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyAngular20.DomainModel
+﻿namespace MyAngular20.DomainModel
 {
-   public class UnidadeDeMedida:EntityBase
+    public class UnidadeDeMedida : EntityBase
     {
         public string Nome { get; set; }
         public string Simbolo { get; set; }

@@ -4,9 +4,6 @@ using MyAngular20.CommonPlace;
 using MyAngular20.DomainModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.ApplicationService.Facades
 {
@@ -43,7 +40,7 @@ namespace MyAngular20.ApplicationService.Facades
             var u = _repository.Usuarios.ObterPor(nomeUsuario);
             u.RegistraUltimoLogin();
             return u.ConvertToView();
-                       
+
         }
 
         List<UsuarioView> IViewFacade<UsuarioView>.ObterTodos()
@@ -68,7 +65,7 @@ namespace MyAngular20.ApplicationService.Facades
                 obj.DataUltimoLogin = DateTime.Now;
             }
 
-                       
+
             obj.AtualizadoPor = view.AtualizadoPor;
             obj.Repository = _repository.Usuarios;
             obj.RegistraAlteracao();

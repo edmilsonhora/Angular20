@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyAngular20.ApplicationService.Views
+﻿namespace MyAngular20.ApplicationService.Views
 {
     public class CategoriaView : ViewBase
-    {       
+    {
         public string Nome { get; set; }
         public string CadastradoPor { get; set; }
         public string DataCadastro { get; set; }
@@ -17,7 +11,7 @@ namespace MyAngular20.ApplicationService.Views
 
     public interface ICategoriaFacade : IViewFacade<CategoriaView>
     {
-       
-    }   
+
+    }
 
 }

@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.CommonPlace
 {
-   public static class Helper
+    public static class Helper
     {
-       public static string GetConference(string text)
+        public static string GetConference(string text)
         {
             var normalizedString = text.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder();
@@ -25,7 +22,7 @@ namespace MyAngular20.CommonPlace
                 }
             }
 
-            return stringBuilder.ToString().Normalize(NormalizationForm.FormC).Replace(" ","").ToLower();
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC).Replace(" ", "").ToLower();
         }
     }
 
@@ -55,7 +52,7 @@ namespace MyAngular20.CommonPlace
             }
         }
 
-    
+
         public static string Encrypt(string clearText, string password)
         {
             byte[] clearBytes = System.Text.Encoding.Unicode.GetBytes(clearText);
@@ -82,7 +79,7 @@ namespace MyAngular20.CommonPlace
             }
         }
 
-    
+
         public static string Decrypt(string cipherText, string password)
         {
             var cipherBytes = Convert.FromBase64String(cipherText);

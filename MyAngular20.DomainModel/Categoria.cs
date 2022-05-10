@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyAngular20.DomainModel
 {
@@ -23,7 +18,8 @@ namespace MyAngular20.DomainModel
         }
     }
 
-    public interface ICategoriaRepository : IRepositoryBase<Categoria> {
+    public interface ICategoriaRepository : IRepositoryBase<Categoria>
+    {
         bool NomeConferenciaExiste(Categoria categoria);
     }
 }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyAngular20.DomainModel
+﻿namespace MyAngular20.DomainModel
 {
-   public class ProdutoFoto : EntityBase
+    public class ProdutoFoto : EntityBase
     {
         public Produto Produto { get; set; }
         public int ProdutoId { get; set; }

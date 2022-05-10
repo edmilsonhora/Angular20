@@ -1,10 +1,6 @@
 ﻿using MyAngular20.CommonPlace;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.DomainModel
 {
@@ -25,13 +21,13 @@ namespace MyAngular20.DomainModel
         public IUsuarioRepository Repository { get; set; }
         public void AutenticarPor(string senha)
         {
-            if(Id == 0)
+            if (Id == 0)
                 throw new ApplicationException("Usuário não existe!");
 
             if (this.Senha != HelperRijndaelCrypto.Encrypt(senha, GlobalConst.ChaveCriptografia))
                 throw new ApplicationException("Usuário ou Senha Incorreto!");
 
-            if(!Ativo)
+            if (!Ativo)
                 throw new ApplicationException("Usuário Inativo!");
         }
 

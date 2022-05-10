@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyAngular20.ApplicationService.Views
+﻿namespace MyAngular20.ApplicationService.Views
 {
-   public class UnidadeDeMedidaView:ViewBase
+    public class UnidadeDeMedidaView : ViewBase
     {
         public string Nome { get; set; }
         public string Simbolo { get; set; }
@@ -16,7 +10,7 @@ namespace MyAngular20.ApplicationService.Views
         public string DataAtualizacao { get; set; }
     }
 
-    public interface IUnidadeDeMedidaFacade:IViewFacade<UnidadeDeMedidaView>
+    public interface IUnidadeDeMedidaFacade : IViewFacade<UnidadeDeMedidaView>
     {
 
     }

@@ -4,9 +4,6 @@ using MyAngular20.CommonPlace;
 using MyAngular20.DomainModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.ApplicationService.Facades
 {
@@ -61,7 +58,7 @@ namespace MyAngular20.ApplicationService.Facades
             obj.AtualizadoPor = view.AtualizadoPor;
             obj.QtdEmEstoque = view.QtdEmEstoque;
             obj.Repository = _repository.Produtos;
-            obj.Fotos.AddRange(ObterFotos(listaFotos));
+            obj.Fotos.AddRange(ObterFotos(listaFotos, view.AtualizadoPor));
             obj.RegistraAlteracao();
 
             obj.Validar();
@@ -69,19 +66,19 @@ namespace MyAngular20.ApplicationService.Facades
             _repository.Produtos.Salvar(obj);
         }
 
-        private List<ProdutoFoto> ObterFotos(List<ProdutoFotoView> listaFotos)
+        private List<ProdutoFoto> ObterFotos(List<ProdutoFotoView> listaFotos, string atualizadoPor)
         {
             var novalista = new List<ProdutoFoto>();
 
             foreach (var item in listaFotos)
             {
-                novalista.Add(ObterFoto(item));
+                novalista.Add(ObterFoto(item, atualizadoPor));
             }
 
             return novalista;
         }
 
-        private ProdutoFoto ObterFoto(ProdutoFotoView item)
+        private ProdutoFoto ObterFoto(ProdutoFotoView item, string atualizadoPor)
         {
             var obj = new ProdutoFoto()
             {
@@ -89,7 +86,8 @@ namespace MyAngular20.ApplicationService.Facades
                 Extensao = item.Extensao,
                 MymeType = item.MymeType,
                 NomeArquivo = item.NomeArquivo,
-                Tamanho = item.Tamanho,                
+                Tamanho = item.Tamanho,
+                AtualizadoPor = atualizadoPor
 
             };
             obj.RegistraAlteracao();

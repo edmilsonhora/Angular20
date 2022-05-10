@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyAngular20.DataAccess.Mappings;
 using MyAngular20.DomainModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.DataAccess.Contexts
 {
@@ -23,19 +18,19 @@ namespace MyAngular20.DataAccess.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+
 
             if (string.IsNullOrWhiteSpace(_conn))
                 optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb; Database=MyAngular20Db; Trusted_connection=True; MultipleActiveResultSets=True");
             else
                 optionsBuilder.UseSqlServer(_conn);
-           
+
             base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+
 
             modelBuilder.ApplyConfiguration(new CategoriaMap());
             modelBuilder.ApplyConfiguration(new ClienteMap());

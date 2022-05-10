@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyAngular20.ApplicationService.Views
+﻿namespace MyAngular20.ApplicationService.Views
 {
-    public class UsuarioView:ViewBase
-    {       
+    public class UsuarioView : ViewBase
+    {
         public string NomeCompleto { get; set; }
         public string UsuarioNome { get; set; }
         public string Email { get; set; }
@@ -26,9 +20,9 @@ namespace MyAngular20.ApplicationService.Views
 
     }
 
-    public interface IUsuarioFacade:IViewFacade<UsuarioView>
-    {        
+    public interface IUsuarioFacade : IViewFacade<UsuarioView>
+    {
         UsuarioView ObterPor(string nomeUsuario);
-       
+
     }
 }

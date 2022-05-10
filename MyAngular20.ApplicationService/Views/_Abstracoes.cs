@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MyAngular20.ApplicationService.Views
 {
@@ -11,7 +7,7 @@ namespace MyAngular20.ApplicationService.Views
     {
         public int Id { get; set; }
     }
-    
+
     public interface IViewFacade<T> where T : ViewBase
     {
         void Salvar(T view);
