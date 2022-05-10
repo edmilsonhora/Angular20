@@ -1,14 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
-using System;
-using System.Text.Json;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MyAngular20.ApplicationService.Views;
-using System.IO;
 using MyAngular20.ApplicationService;
+using MyAngular20.ApplicationService.Views;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 
 namespace MyAngular20.AppWebAngular.Controllers
 {
@@ -130,7 +128,7 @@ namespace MyAngular20.AppWebAngular.Controllers
                 _facade.Roolback();
                 return BadRequest(ex.Message.Replace(Environment.NewLine, ";"));
             }
-        }        
+        }
 
         [Route("excluir/{id:int}"), HttpDelete]
         public IActionResult Excluir(int id)

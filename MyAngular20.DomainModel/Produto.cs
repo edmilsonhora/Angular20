@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.DomainModel
 {
@@ -40,13 +36,14 @@ namespace MyAngular20.DomainModel
             ListaObrigatoria("Fotos", Fotos);
             CampoJahDefinido(Repository.NomeConferenciaExiste(this), nameof(Descricao), Descricao);
             CampoJahDefinido(Repository.CodigoJahExiste(this), nameof(Codigo), Codigo);
-            
+
 
             base.Validar();
         }
     }
 
-    public interface IProdutoRepository : IRepositoryBase<Produto> {
+    public interface IProdutoRepository : IRepositoryBase<Produto>
+    {
 
         bool NomeConferenciaExiste(Produto produto);
         bool CodigoJahExiste(Produto produto);

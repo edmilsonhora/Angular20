@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MyAngular20.ApplicationService;
 using MyAngular20.ApplicationService.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyAngular20.AppWebAngular.Controllers
 {
@@ -19,7 +15,7 @@ namespace MyAngular20.AppWebAngular.Controllers
             this._facade = facade;
         }
 
-       
+
         [Route("obterTodos"), HttpGet]
         public IActionResult ObterTodos()
         {
@@ -34,14 +30,14 @@ namespace MyAngular20.AppWebAngular.Controllers
             }
         }
 
-       
+
         [Route("obterPaginado/{pageIndex:int}/{pageSize:int}"), HttpGet]
         public IActionResult ObterPaginado(int pageIndex, int pageSize)
         {
             try
             {
-                
-                return Ok(_facade.Categorias.ObterPaginado(pageIndex,pageSize));
+
+                return Ok(_facade.Categorias.ObterPaginado(pageIndex, pageSize));
             }
             catch (Exception ex)
             {
@@ -50,7 +46,7 @@ namespace MyAngular20.AppWebAngular.Controllers
             }
         }
 
-       
+
         [Route("obterPor/{id:int}"), HttpGet]
         public IActionResult ObterPor(int id)
         {
@@ -65,7 +61,7 @@ namespace MyAngular20.AppWebAngular.Controllers
             }
         }
 
-       
+
         [Route("salvar"), HttpPost]
         public IActionResult Salvar(CategoriaView view)
         {
@@ -81,7 +77,7 @@ namespace MyAngular20.AppWebAngular.Controllers
                 return BadRequest(ex.Message.Replace(Environment.NewLine, ";"));
             }
         }
-        
+
         [Route("excluir/{id:int}"), HttpDelete]
         public IActionResult Excluir(int id)
         {

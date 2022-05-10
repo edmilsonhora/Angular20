@@ -2,11 +2,7 @@
 using MyAngular20.ApplicationService.Views;
 using MyAngular20.CommonPlace;
 using MyAngular20.DomainModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.ApplicationService.Facades
 {
@@ -19,7 +15,7 @@ namespace MyAngular20.ApplicationService.Facades
             this._repository = repository;
         }
 
-        void  IViewFacade<CategoriaView>.Excluir(int id)
+        void IViewFacade<CategoriaView>.Excluir(int id)
         {
             var obj = _repository.Categorias.ObterPor(id);
             if (obj == null) return;
@@ -33,7 +29,7 @@ namespace MyAngular20.ApplicationService.Facades
 
         PaginadorDeListas<CategoriaView> IViewFacade<CategoriaView>.ObterPaginado(int pageIndex, int pageSize)
         {
-           
+
             int totalRegistros = _repository.Categorias.TotalDeRegistros();
             var lista = _repository.Categorias.ObterPaginado(pageIndex, pageSize).ConvertToView();
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MyAngular20.DomainModel
 {
@@ -23,7 +19,8 @@ namespace MyAngular20.DomainModel
 
     }
 
-    public interface IClienteRepository : IRepositoryBase<Cliente> {
+    public interface IClienteRepository : IRepositoryBase<Cliente>
+    {
         List<Cliente> ObterPor(string nome);
     }
 }

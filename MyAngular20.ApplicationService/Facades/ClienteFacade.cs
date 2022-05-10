@@ -1,11 +1,7 @@
 ﻿using MyAngular20.ApplicationService.Adapters;
 using MyAngular20.ApplicationService.Views;
 using MyAngular20.DomainModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.ApplicationService.Facades
 {
@@ -50,7 +46,7 @@ namespace MyAngular20.ApplicationService.Facades
             obj.Email = view.Email;
             obj.Telefone = view.Telefone;
             obj.AtualizadoPor = view.AtualizadoPor;
-           
+
             obj.RegistraAlteracao();
 
             obj.Validar();

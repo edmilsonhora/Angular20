@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MyAngular20.ApplicationService.Views
 {
-   public class ListPedidoItemView : List<PedidoItemView>
+    public class ListPedidoItemView : List<PedidoItemView>
     {
 
         public ListPedidoItemView AddProdutosView(List<ProdutoView> produtosView)
@@ -16,7 +12,7 @@ namespace MyAngular20.ApplicationService.Views
             {
                 var obj = new PedidoItemView();
                 obj.Descricao = item.Descricao;
-                
+
             }
 
             return this;

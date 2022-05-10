@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.DomainModel
 {
@@ -19,7 +16,7 @@ namespace MyAngular20.DomainModel
 
         protected internal void EhValido(StringBuilder regrasQuebradas)
         {
-            
+
             if (Produto == null || Produto.Id.Equals(0))
                 regrasQuebradas.Append($"Produto não identificado.{Environment.NewLine}");
 

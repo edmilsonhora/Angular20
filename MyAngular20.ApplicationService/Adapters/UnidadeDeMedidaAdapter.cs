@@ -1,10 +1,6 @@
 ﻿using MyAngular20.ApplicationService.Views;
 using MyAngular20.DomainModel;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.ApplicationService.Adapters
 {
@@ -31,7 +27,7 @@ namespace MyAngular20.ApplicationService.Adapters
             {
                 Id = item.Id,
                 Nome = item.Nome,
-                Simbolo = item.Simbolo,                
+                Simbolo = item.Simbolo,
                 CadastradoPor = item.CadastradoPor,
                 AtualizadoPor = item.AtualizadoPor,
                 DataAtualizacao = $"{item.DataAtualizacao.ToShortDateString()} às {item.DataAtualizacao.ToShortTimeString()}",

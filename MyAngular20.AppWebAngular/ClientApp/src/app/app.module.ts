@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainModule,
     AppMaterialModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

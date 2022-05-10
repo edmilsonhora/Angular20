@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace MyAngular20.DomainModel
 {
@@ -116,7 +115,7 @@ namespace MyAngular20.DomainModel
 
     }
 
-   
+
 
     public interface IRepositoryBase<T> where T : EntityBase
     {

@@ -2,11 +2,6 @@
 using MyAngular20.ApplicationService.Views;
 using MyAngular20.DataAccess;
 using MyAngular20.DomainModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyAngular20.ApplicationService
 {

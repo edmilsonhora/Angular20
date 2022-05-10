@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MyAngular20.ApplicationService.Views
 {
-    public class ProdutoView:ViewBase
+    public class ProdutoView : ViewBase
     {
         public string Codigo { get; set; }
         public string Descricao { get; set; }
@@ -23,7 +19,7 @@ namespace MyAngular20.ApplicationService.Views
         public string DataAtualizacao { get; set; }
     }
 
-    public interface IProdutoFacade:IViewFacade<ProdutoView>
+    public interface IProdutoFacade : IViewFacade<ProdutoView>
     {
         void Salvar(ProdutoView view, List<ProdutoFotoView> listaFotos);
     }
