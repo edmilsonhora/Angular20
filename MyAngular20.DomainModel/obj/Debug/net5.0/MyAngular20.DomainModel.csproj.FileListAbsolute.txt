@@ -16,21 +16,3 @@ C:\Users\Edmilson da Hora\source\repos\MyAngular20\MyAngular20.DomainModel\obj\D
 C:\Users\Edmilson da Hora\source\repos\MyAngular20\MyAngular20.DomainModel\obj\Debug\net5.0\ref\MyAngular20.DomainModel.dll
 C:\Users\Edmilson da Hora\source\repos\MyAngular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.pdb
 C:\Users\Edmilson da Hora\source\repos\MyAngular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.genruntimeconfig.cache
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\bin\Debug\net5.0\MyAngular20.DomainModel.deps.json
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\bin\Debug\net5.0\MyAngular20.DomainModel.runtimeconfig.json
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\bin\Debug\net5.0\MyAngular20.DomainModel.runtimeconfig.dev.json
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\bin\Debug\net5.0\MyAngular20.DomainModel.dll
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\bin\Debug\net5.0\ref\MyAngular20.DomainModel.dll
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\bin\Debug\net5.0\MyAngular20.DomainModel.pdb
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\bin\Debug\net5.0\MyAngular20.CommonPlace.dll
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\bin\Debug\net5.0\MyAngular20.CommonPlace.pdb
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.csproj.AssemblyReference.cache
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.AssemblyInfoInputs.cache
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.AssemblyInfo.cs
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.csproj.CoreCompileInputs.cache
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.csproj.CopyComplete
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.dll
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\ref\MyAngular20.DomainModel.dll
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.pdb
-C:\Users\Edmilson\source\repos\Angular20\MyAngular20.DomainModel\obj\Debug\net5.0\MyAngular20.DomainModel.genruntimeconfig.cache

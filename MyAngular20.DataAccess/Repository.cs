@@ -70,16 +70,6 @@ namespace MyAngular20.DataAccess
 
         IMateriaProfessorRepository IRepository.Materias_Professores => materiasProfessores ?? (materiasProfessores = new MateriaProfessorRepository(context));
 
-        public void Dispose()
-        {
-
-        }
-
-        void IRepository.Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
         void IRepository.RollBack()
         {
             clientes = null;
@@ -108,6 +98,11 @@ namespace MyAngular20.DataAccess
         void IRepository.SaveChanges()
         {
             context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }
