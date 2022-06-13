@@ -61,6 +61,11 @@ namespace MyAngular20.DomainModel
             if (valor < 1)
                 RegrasQuebradas.Append($"O campo {nomeDoCampo} deve ter valor maior que zero.{Environment.NewLine}");
         }
+        protected void CampoNumericoMaiorQueZero(string nomeDoCampo, double valor)
+        {
+            if (valor < 1d)
+                RegrasQuebradas.Append($"O campo {nomeDoCampo} deve ter valor maior que zero.{Environment.NewLine}");
+        }
         protected void CampoNumericoMaiorQueZero(string nomeDoCampo, decimal valor)
         {
             if (valor < 1m)
@@ -69,12 +74,17 @@ namespace MyAngular20.DomainModel
         protected void CampoNumericoNaoPodeSerNegativo(string nomeDoCampo, decimal valor)
         {
             if (valor < 0)
-                RegrasQuebradas.Append($"O campo {nomeDoCampo} deve ter valor positivo.{Environment.NewLine}");
+                RegrasQuebradas.Append($"O campo {nomeDoCampo} deve ter valor zero ou positivo.{Environment.NewLine}");
+        }
+        protected void CampoNumericoNaoPodeSerNegativo(string nomeDoCampo, double valor)
+        {
+            if (valor < 0)
+                RegrasQuebradas.Append($"O campo {nomeDoCampo} deve ter valor zero ou positivo.{Environment.NewLine}");
         }
         protected void CampoNumericoNaoPodeSerNegativo(string nomeDoCampo, int valor)
         {
             if (valor < 0)
-                RegrasQuebradas.Append($"O campo {nomeDoCampo} deve ter valor positivo.{Environment.NewLine}");
+                RegrasQuebradas.Append($"O campo {nomeDoCampo} deve ter valor zero ou positivo.{Environment.NewLine}");
         }
         protected void CampoSoAceitaNumeros(string nomeDoCampo, string valor)
         {
@@ -114,9 +124,6 @@ namespace MyAngular20.DomainModel
 
 
     }
-
-
-
     public interface IRepositoryBase<T> where T : EntityBase
     {
         void Salvar(T entity);
@@ -126,12 +133,10 @@ namespace MyAngular20.DomainModel
         List<T> ObterTodos();
         int TotalDeRegistros();
     }
-
     public interface IRepository
     {
         public void SaveChanges();
         public void RollBack();
-
         public void Dispose();
         public IClienteRepository Clientes { get; }
         public ICategoriaRepository Categorias { get; }
@@ -140,7 +145,21 @@ namespace MyAngular20.DomainModel
         public IPedidoItemRepository PedidosItens { get; }
         public IUsuarioRepository Usuarios { get; }
         public IUnidadeDeMedidaRepository UnidadesDeMedida { get; }
+        public IAlunoRepository Alunos { get; }
+        public IBimestreRepository Bimestres { get; }
+        public ICursoRepository Cursos { get; }
+        public IHorarioRepository Horarios { get; }
+        public IMateriaRepository Materias { get; }
+        public IMateriaCursoRepository Materias_Cursos { get; }
+        public INotaRepository Notas { get; }
+        public IProfessorRepository Professores { get; }
+
+        public IProfessoresTurmasRepository Professores_Turmas { get; }
+
+        public ITurmaRepository Turmas { get; }
 
 
     }
+
+
 }

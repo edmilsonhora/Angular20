@@ -51,6 +51,16 @@ namespace MyAngular20.DataAccess.Contexts
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<PedidoItem> PedidosItens { get; set; }
         public DbSet<UnidadeDeMedida> UnidadeDeMedidas { get; set; }
+        public DbSet<Turma> Turmas { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Professor> Professores { get; set; }
+        public DbSet<Nota> Notas { get; set; }
+        public DbSet<Bimestre> Bimestres { get; set; }
+        public DbSet<Curso> Cursos { get; set; }
+        public DbSet<Materia> Materias { get; set; }
+        public DbSet<Horario> Horarios { get; set; }
+        public DbSet<MateriaCurso> Materias_Cursos { get; set; }
+        public DbSet<ProfessoresTurmas> Professores_Turmas { get; set; }
 
     }
 }

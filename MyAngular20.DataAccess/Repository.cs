@@ -35,6 +35,26 @@ namespace MyAngular20.DataAccess
 
         IUnidadeDeMedidaRepository IRepository.UnidadesDeMedida => unidadesDeMedidas ?? (unidadesDeMedidas = new UnidadeDeMedidaRepository(context));
 
+        IAlunoRepository IRepository.Alunos => throw new NotImplementedException();
+
+        IBimestreRepository IRepository.Bimestres => throw new NotImplementedException();
+
+        ICursoRepository IRepository.Cursos => throw new NotImplementedException();
+
+        IHorarioRepository IRepository.Horarios => throw new NotImplementedException();
+
+        IMateriaRepository IRepository.Materias => throw new NotImplementedException();
+
+        IMateriaCursoRepository IRepository.Materias_Cursos => throw new NotImplementedException();
+
+        INotaRepository IRepository.Notas => throw new NotImplementedException();
+
+        IProfessorRepository IRepository.Professores => throw new NotImplementedException();
+
+        IProfessoresTurmasRepository IRepository.Professores_Turmas => throw new NotImplementedException();
+
+        ITurmaRepository IRepository.Turmas => throw new NotImplementedException();
+
         public void Dispose()
         {
 

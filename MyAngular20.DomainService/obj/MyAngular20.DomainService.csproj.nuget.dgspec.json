@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainService\\MyAngular20.DomainService.csproj": {}
+    "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainService\\MyAngular20.DomainService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj": {
+    "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj",
+        "projectUniqueName": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj",
         "projectName": "MyAngular20.CommonPlace",
-        "projectPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj",
-        "packagesPath": "C:\\Users\\Edmilson da Hora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.CommonPlace\\obj\\",
+        "projectPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj",
+        "packagesPath": "C:\\Users\\Edmilson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.CommonPlace\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Edmilson da Hora\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Edmilson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,9 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.prototipo.unimedfesp.coop.br/nuget": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://unimedfesp.pkgs.visualstudio.com/_packaging/fesp/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -72,25 +66,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj": {
+    "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj",
+        "projectUniqueName": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj",
         "projectName": "MyAngular20.DomainModel",
-        "projectPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj",
-        "packagesPath": "C:\\Users\\Edmilson da Hora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainModel\\obj\\",
+        "projectPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj",
+        "packagesPath": "C:\\Users\\Edmilson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainModel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Edmilson da Hora\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Edmilson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,16 +88,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.prototipo.unimedfesp.coop.br/nuget": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://unimedfesp.pkgs.visualstudio.com/_packaging/fesp/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj": {
-                "projectPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj",
+              "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj": {
+                "projectPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj",
                 "privateAssets": "all"
               }
             }
@@ -149,25 +137,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainService\\MyAngular20.DomainService.csproj": {
+    "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainService\\MyAngular20.DomainService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainService\\MyAngular20.DomainService.csproj",
+        "projectUniqueName": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainService\\MyAngular20.DomainService.csproj",
         "projectName": "MyAngular20.DomainService",
-        "projectPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainService\\MyAngular20.DomainService.csproj",
-        "packagesPath": "C:\\Users\\Edmilson da Hora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainService\\obj\\",
+        "projectPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainService\\MyAngular20.DomainService.csproj",
+        "packagesPath": "C:\\Users\\Edmilson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainService\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Edmilson da Hora\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Edmilson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -175,20 +159,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.prototipo.unimedfesp.coop.br/nuget": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://unimedfesp.pkgs.visualstudio.com/_packaging/fesp/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj": {
-                "projectPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj",
+              "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj": {
+                "projectPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.CommonPlace\\MyAngular20.CommonPlace.csproj",
                 "privateAssets": "all"
               },
-              "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj": {
-                "projectPath": "C:\\Users\\Edmilson da Hora\\source\\repos\\MyAngular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj",
+              "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj": {
+                "projectPath": "C:\\Users\\Edmilson\\source\\repos\\Angular20\\MyAngular20.DomainModel\\MyAngular20.DomainModel.csproj",
                 "privateAssets": "all"
               }
             }
@@ -230,7 +212,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }
