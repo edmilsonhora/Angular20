@@ -46,27 +46,27 @@ namespace MyAngular20.ApplicationService
         ILoginFacade IFacade.Logins => logins ?? (logins = new LoginFacade(repository));
         IUnidadeDeMedidaFacade IFacade.UnidadesDeMedidas => unidadesDeMedidas ?? (unidadesDeMedidas = new UnidadeDeMedidaFacade(repository));
 
-        IAlunoFacade IFacade.Alunos => throw new System.NotImplementedException();
+        IAlunoFacade IFacade.Alunos => alunos ?? (alunos = new AlunoFacade(repository));
 
-        IBimestreFacade IFacade.Bimestres => throw new System.NotImplementedException();
+        IBimestreFacade IFacade.Bimestres => bimestres ?? (bimestres = new BimestreFacade(repository));
 
-        ICursoFacade IFacade.Cursos => throw new System.NotImplementedException();
+        ICursoFacade IFacade.Cursos => cursos ?? (cursos = new CursoFacade(repository));
 
-        IHorarioFacade IFacade.Horarios => throw new System.NotImplementedException();
+        IHorarioFacade IFacade.Horarios => horarios ?? (horarios = new HorarioFacade(repository));
 
-        IMateriaFacade IFacade.Materias => throw new System.NotImplementedException();
+        IMateriaFacade IFacade.Materias => materias ?? (materias = new MateriaFacade(repository));
 
-        IMateriaCursoFacade IFacade.MateriasCursos => throw new System.NotImplementedException();
+        IMateriaCursoFacade IFacade.MateriasCursos => materiasCursos ?? (materiasCursos = new MateriaCursoFacade(repository));
 
-        IMateriaProfessorFacade IFacade.MateriasProfessores => throw new System.NotImplementedException();
+        IMateriaProfessorFacade IFacade.MateriasProfessores => materiasProfessores ?? (materiasProfessores = new MateriaProfessorFacade(repository));
 
-        INotaFacade IFacade.Notas => throw new System.NotImplementedException();
+        INotaFacade IFacade.Notas => notas ?? (notas = new NotaFacade(repository));
 
-        IProfessorFacade IFacade.Professores => throw new System.NotImplementedException();
+        IProfessorFacade IFacade.Professores => professores ?? (professores = new ProfessorFacade(repository));
 
-        IProfessorTurmaFacade IFacade.ProfessoresTurmas => throw new System.NotImplementedException();
+        IProfessorTurmaFacade IFacade.ProfessoresTurmas => professoresTurmas ?? (professoresTurmas = new ProfessorTurmaFacade(repository));
 
-        ITurmaFacade IFacade.Turmas => throw new System.NotImplementedException();
+        ITurmaFacade IFacade.Turmas => turmas ?? (turmas = new TurmaFacade(repository));
 
         void IFacade.Roolback()
         {

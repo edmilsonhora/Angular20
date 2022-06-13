@@ -2,8 +2,8 @@
 
 namespace MyAngular20.DomainModel
 {
-    public class ProfessorTurma :EntityBase
-    {       
+    public class ProfessorTurma : EntityBase
+    {
         public Professor Professor { get; set; }
         public int ProfessorId { get; set; }
         public Turma Turma { get; set; }
@@ -26,7 +26,7 @@ namespace MyAngular20.DomainModel
 
     }
 
-    public interface IProfessorTurmaRepository : IRepositoryBase<ProfessorTurma>{ }
+    public interface IProfessorTurmaRepository : IRepositoryBase<ProfessorTurma> { }
 
 
 }

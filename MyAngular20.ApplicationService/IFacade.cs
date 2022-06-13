@@ -16,14 +16,14 @@ namespace MyAngular20.ApplicationService
         public IUnidadeDeMedidaFacade UnidadesDeMedidas { get; }
         public IAlunoFacade Alunos { get; }
         public IBimestreFacade Bimestres { get; }
-        public ICursoFacade Cursos {get;}
+        public ICursoFacade Cursos { get; }
         public IHorarioFacade Horarios { get; }
         public IMateriaFacade Materias { get; }
         public IMateriaCursoFacade MateriasCursos { get; }
-        public IMateriaProfessorFacade  MateriasProfessores { get; }
+        public IMateriaProfessorFacade MateriasProfessores { get; }
         public INotaFacade Notas { get; }
         public IProfessorFacade Professores { get; }
-        public IProfessorTurmaFacade  ProfessoresTurmas { get; }
+        public IProfessorTurmaFacade ProfessoresTurmas { get; }
         public ITurmaFacade Turmas { get; }
     }
 }

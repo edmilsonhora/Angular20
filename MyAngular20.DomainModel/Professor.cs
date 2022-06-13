@@ -2,8 +2,8 @@
 
 namespace MyAngular20.DomainModel
 {
-    public class Professor:EntityBase
-    {       
+    public class Professor : EntityBase
+    {
         public string Nome { get; set; }
         public List<Materia> Materias { get; set; }
 

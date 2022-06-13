@@ -13,7 +13,7 @@ namespace MyAngular20.DataAccess.Mappings
             builder.Property(p => p.Id).HasColumnType("int").IsRequired();
             builder.Property(p => p.ProfessorId).HasColumnType("int").IsRequired();
             builder.Property(p => p.TurmaId).HasColumnType("int").IsRequired();
-            builder.Property(p => p.HorarioId).HasColumnType("int").IsRequired();           
+            builder.Property(p => p.HorarioId).HasColumnType("int").IsRequired();
             builder.Property(p => p.AtualizadoPor).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.CadastradoPor).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.DataCadastro).HasColumnType("datetime").IsRequired();

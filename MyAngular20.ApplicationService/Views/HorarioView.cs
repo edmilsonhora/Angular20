@@ -1,6 +1,6 @@
 ﻿namespace MyAngular20.ApplicationService.Views
 {
-    public class HorarioView:ViewBase
+    public class HorarioView : ViewBase
     {
         public string DiaDaSemana { get; set; }
         public string Periodo { get; set; }

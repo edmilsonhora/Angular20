@@ -13,7 +13,7 @@ namespace MyAngular20.ApplicationService.Views
         public int CategoriaId { get; set; }
         public int UnidadeDeMedidaId { get; set; }
         public decimal QtdEmEstoque { get; set; }
-       
+
     }
 
     public interface IProdutoFacade : IViewFacade<ProdutoView>

@@ -2,9 +2,9 @@
 
 namespace MyAngular20.DomainModel
 {
-    public class Turma :EntityBase
+    public class Turma : EntityBase
     {
-       
+
         public string Nome { get; set; }
         public Curso Curso { get; set; }
         public int CursoId { get; set; }

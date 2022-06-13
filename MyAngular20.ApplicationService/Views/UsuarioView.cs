@@ -12,7 +12,7 @@
         public string ConfirmaSenha { get; set; }
         public int Notificacoes { get; set; }
         public string DataUltimoLogin { get; set; }
-      
+
 
 
     }

@@ -8,7 +8,7 @@ namespace MyAngular20.ApplicationService.Views
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-        
+
     }
 
     public interface IClienteFacade : IViewFacade<ClienteView>

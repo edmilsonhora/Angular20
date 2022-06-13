@@ -1,8 +1,8 @@
 ﻿namespace MyAngular20.DomainModel
 {
-    public class Bimestre :EntityBase
+    public class Bimestre : EntityBase
     {
-       
+
         public string Nome { get; set; }
         public int Ano { get; set; }
 

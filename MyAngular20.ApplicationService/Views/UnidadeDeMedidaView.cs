@@ -4,7 +4,7 @@
     {
         public string Nome { get; set; }
         public string Simbolo { get; set; }
-       
+
     }
 
     public interface IUnidadeDeMedidaFacade : IViewFacade<UnidadeDeMedidaView>

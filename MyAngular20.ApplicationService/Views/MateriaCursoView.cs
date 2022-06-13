@@ -1,6 +1,6 @@
 ﻿namespace MyAngular20.ApplicationService.Views
 {
-    public class MateriaCursoView:ViewBase
+    public class MateriaCursoView : ViewBase
     {
         public string Materia { get; set; }
         public int MateriaId { get; set; }

@@ -1,7 +1,7 @@
 ﻿namespace MyAngular20.DomainModel
 {
-    public class Horario :EntityBase
-    {       
+    public class Horario : EntityBase
+    {
         public string DiaDaSemana { get; set; }
         public string Periodo { get; set; }
 

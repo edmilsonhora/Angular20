@@ -11,7 +11,7 @@ namespace MyAngular20.DataAccess.Mappings
             builder.ToTable("Cursos");
             builder.HasKey("Id");
             builder.Property(p => p.Id).HasColumnType("int").IsRequired();
-            builder.Property(p => p.Nome).HasColumnType("varchar").HasMaxLength(256).IsRequired();            
+            builder.Property(p => p.Nome).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.AtualizadoPor).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.CadastradoPor).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.DataCadastro).HasColumnType("datetime").IsRequired();
