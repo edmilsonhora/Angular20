@@ -23,7 +23,8 @@ namespace MyAngular20.DataAccess
         private INotaRepository notas;
         private IProfessorRepository professores;
         private IProfessorTurmaRepository professoresTurmas;
-        private ITurmaRepository turmas; 
+        private ITurmaRepository turmas;
+        private IMateriaProfessorRepository materiasProfessores;
         private MyContext context;
         private readonly string _conn;
 
@@ -67,6 +68,8 @@ namespace MyAngular20.DataAccess
 
         ITurmaRepository IRepository.Turmas => turmas ?? (turmas = new TurmaRepository(context));
 
+        IMateriaProfessorRepository IRepository.Materias_Professores => materiasProfessores ?? (materiasProfessores = new MateriaProfessorRepository(context));
+
         public void Dispose()
         {
 
@@ -96,6 +99,7 @@ namespace MyAngular20.DataAccess
             professores = null;
             professoresTurmas = null;
             turmas = null;
+            materiasProfessores = null;
 
             context = new MyContext(_conn);
 

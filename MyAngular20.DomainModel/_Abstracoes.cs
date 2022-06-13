@@ -153,10 +153,9 @@ namespace MyAngular20.DomainModel
         public IMateriaCursoRepository Materias_Cursos { get; }
         public INotaRepository Notas { get; }
         public IProfessorRepository Professores { get; }
-
         public IProfessorTurmaRepository Professores_Turmas { get; }
-
         public ITurmaRepository Turmas { get; }
+        public IMateriaProfessorRepository Materias_Professores { get; }
 
 
     }
