@@ -2,7 +2,7 @@
 
 namespace MyAngular20.DomainModel
 {
-    public class ProfessoresTurmas :EntityBase
+    public class ProfessorTurma :EntityBase
     {       
         public Professor Professor { get; set; }
         public int ProfessorId { get; set; }
@@ -11,7 +11,7 @@ namespace MyAngular20.DomainModel
         public Horario Horario { get; set; }
         public int HorarioId { get; set; }
         [NotMapped]
-        public IProfessoresTurmasRepository Repository { get; set; }
+        public IProfessorTurmaRepository Repository { get; set; }
 
         public override void Validar()
         {
@@ -26,7 +26,7 @@ namespace MyAngular20.DomainModel
 
     }
 
-    public interface IProfessoresTurmasRepository : IRepositoryBase<ProfessoresTurmas>{ }
+    public interface IProfessorTurmaRepository : IRepositoryBase<ProfessorTurma>{ }
 
 
 }

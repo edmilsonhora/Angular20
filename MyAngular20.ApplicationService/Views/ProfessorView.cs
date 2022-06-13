@@ -4,4 +4,6 @@
     {
         public string Nome { get; set; }
     }
+
+    public interface IProfessorFacade : IViewFacade<ProfessorView> { }
 }

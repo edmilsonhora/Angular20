@@ -4,9 +4,9 @@ using MyAngular20.DomainModel;
 
 namespace MyAngular20.DataAccess.Mappings
 {
-    internal class ProfessoresTurmasMap : IEntityTypeConfiguration<ProfessoresTurmas>
+    internal class ProfessorTurmaMap : IEntityTypeConfiguration<ProfessorTurma>
     {
-        public void Configure(EntityTypeBuilder<ProfessoresTurmas> builder)
+        public void Configure(EntityTypeBuilder<ProfessorTurma> builder)
         {
             builder.ToTable("ProfessoresTurmas");
             builder.HasKey("Id");

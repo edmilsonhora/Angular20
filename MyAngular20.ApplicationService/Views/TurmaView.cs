@@ -5,4 +5,6 @@
         public string Nome { get; set; }       
         public int CursoId { get; set; }
     }
+
+    public interface ITurmaFacade : IViewFacade<TurmaView> { }
 }

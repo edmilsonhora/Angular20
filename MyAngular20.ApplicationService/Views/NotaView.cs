@@ -11,4 +11,6 @@
         public string Bimestre { get; set; }
 
     }
+
+    public interface INotaFacade : IViewFacade<NotaView> { }
 }

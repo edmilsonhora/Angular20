@@ -9,4 +9,6 @@
         public double CargaHoraria { get; set; }
 
     }
+
+    public interface IMateriaCursoFacade : IViewFacade<MateriaCursoView> { }
 }

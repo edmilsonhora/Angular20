@@ -154,7 +154,7 @@ namespace MyAngular20.DomainModel
         public INotaRepository Notas { get; }
         public IProfessorRepository Professores { get; }
 
-        public IProfessoresTurmasRepository Professores_Turmas { get; }
+        public IProfessorTurmaRepository Professores_Turmas { get; }
 
         public ITurmaRepository Turmas { get; }
 

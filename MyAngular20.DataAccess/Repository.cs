@@ -22,7 +22,7 @@ namespace MyAngular20.DataAccess
         private IMateriaCursoRepository materiasCursos;
         private INotaRepository notas;
         private IProfessorRepository professores;
-        private IProfessoresTurmasRepository professoresTurmas;
+        private IProfessorTurmaRepository professoresTurmas;
         private ITurmaRepository turmas; 
         private MyContext context;
         private readonly string _conn;
@@ -63,7 +63,7 @@ namespace MyAngular20.DataAccess
 
         IProfessorRepository IRepository.Professores => professores ?? (professores = new ProfessorRepository(context));
 
-        IProfessoresTurmasRepository IRepository.Professores_Turmas => professoresTurmas ?? (professoresTurmas = new ProfessoresTurmasRepository(context));
+        IProfessorTurmaRepository IRepository.Professores_Turmas => professoresTurmas ?? (professoresTurmas = new ProfessorTurmaRepository(context));
 
         ITurmaRepository IRepository.Turmas => turmas ?? (turmas = new TurmaRepository(context));
 

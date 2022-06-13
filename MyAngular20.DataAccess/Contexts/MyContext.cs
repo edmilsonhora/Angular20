@@ -45,7 +45,7 @@ namespace MyAngular20.DataAccess.Contexts
             modelBuilder.ApplyConfiguration(new MateriaCursoMap());
             modelBuilder.ApplyConfiguration(new NotaMap());
             modelBuilder.ApplyConfiguration(new ProfessorMap());
-            modelBuilder.ApplyConfiguration(new ProfessoresTurmasMap());
+            modelBuilder.ApplyConfiguration(new ProfessorTurmaMap());
             modelBuilder.ApplyConfiguration(new TurmaMap());
 
             base.OnModelCreating(modelBuilder);
@@ -67,7 +67,7 @@ namespace MyAngular20.DataAccess.Contexts
         public DbSet<Materia> Materias { get; set; }
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<MateriaCurso> Materias_Cursos { get; set; }
-        public DbSet<ProfessoresTurmas> Professores_Turmas { get; set; }
+        public DbSet<ProfessorTurma> Professores_Turmas { get; set; }
 
     }
 }
