@@ -28,6 +28,8 @@ import { UnidadesEditComponent } from './unidades/unidades-edit/unidades-edit.co
 import { ConfirmaExclusaoComponent } from './utils/confirma-exclusao/confirma-exclusao.component';
 import { ClientesPesquisaComponent } from './clientes/clientes-pesquisa/clientes-pesquisa.component';
 import { ProdutosPesquisaComponent } from './produtos/produtos-pesquisa/produtos-pesquisa.component';
+import { AlunosListComponent } from './alunos/alunos-list/alunos-list.component';
+import { AlunosEditComponent } from './alunos/alunos-edit/alunos-edit.component';
 
 
 
@@ -59,6 +61,8 @@ import { ProdutosPesquisaComponent } from './produtos/produtos-pesquisa/produtos
     ConfirmaExclusaoComponent,
     ClientesPesquisaComponent,
     ProdutosPesquisaComponent,
+    AlunosListComponent,
+    AlunosEditComponent,
   ],
   entryComponents:[MessageboxComponent],
   imports: [
