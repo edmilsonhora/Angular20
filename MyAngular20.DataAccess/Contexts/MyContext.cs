@@ -19,7 +19,6 @@ namespace MyAngular20.DataAccess.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-
             if (string.IsNullOrWhiteSpace(_conn))
                 optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb; Database=MyAngular20Db; Trusted_connection=True; MultipleActiveResultSets=True");
             else
@@ -30,8 +29,6 @@ namespace MyAngular20.DataAccess.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
             modelBuilder.ApplyConfiguration(new CategoriaMap());
             modelBuilder.ApplyConfiguration(new ClienteMap());
             modelBuilder.ApplyConfiguration(new PedidoItemMap());
@@ -40,6 +37,16 @@ namespace MyAngular20.DataAccess.Contexts
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new ProdutoFotoMap());
             modelBuilder.ApplyConfiguration(new UnidadeDeMedidaMap());
+            modelBuilder.ApplyConfiguration(new AlunoMap());
+            modelBuilder.ApplyConfiguration(new BimestreMap());
+            modelBuilder.ApplyConfiguration(new CursoMap());
+            modelBuilder.ApplyConfiguration(new HorarioMap());
+            modelBuilder.ApplyConfiguration(new MateriaMap());
+            modelBuilder.ApplyConfiguration(new MateriaCursoMap());
+            modelBuilder.ApplyConfiguration(new NotaMap());
+            modelBuilder.ApplyConfiguration(new ProfessorMap());
+            modelBuilder.ApplyConfiguration(new ProfessoresTurmasMap());
+            modelBuilder.ApplyConfiguration(new TurmaMap());
 
             base.OnModelCreating(modelBuilder);
         }

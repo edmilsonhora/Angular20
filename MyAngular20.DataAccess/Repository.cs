@@ -14,11 +14,23 @@ namespace MyAngular20.DataAccess
         private IUsuarioRepository usuarios;
         private IPedidoRepository pedidos;
         private IUnidadeDeMedidaRepository unidadesDeMedidas;
-        private readonly MyContext context;
+        private IAlunoRepository alunos;
+        private IBimestreRepository bimestres;
+        private ICursoRepository cursos;
+        private IHorarioRepository horarios;
+        private IMateriaRepository materias;
+        private IMateriaCursoRepository materiasCursos;
+        private INotaRepository notas;
+        private IProfessorRepository professores;
+        private IProfessoresTurmasRepository professoresTurmas;
+        private ITurmaRepository turmas; 
+        private MyContext context;
+        private readonly string _conn;
 
         public Repository(string conn = "")
         {
-            this.context = new MyContext(conn);
+            this._conn = conn;
+            this.context = new MyContext(_conn);
         }
 
         IClienteRepository IRepository.Clientes => clientes ?? (clientes = new ClienteRepository(context));
@@ -35,25 +47,25 @@ namespace MyAngular20.DataAccess
 
         IUnidadeDeMedidaRepository IRepository.UnidadesDeMedida => unidadesDeMedidas ?? (unidadesDeMedidas = new UnidadeDeMedidaRepository(context));
 
-        IAlunoRepository IRepository.Alunos => throw new NotImplementedException();
+        IAlunoRepository IRepository.Alunos => alunos ?? (alunos = new AlunoRepository(context));
 
-        IBimestreRepository IRepository.Bimestres => throw new NotImplementedException();
+        IBimestreRepository IRepository.Bimestres => bimestres ?? (bimestres = new BimestreRepository(context));
 
-        ICursoRepository IRepository.Cursos => throw new NotImplementedException();
+        ICursoRepository IRepository.Cursos => cursos ?? (cursos = new CursoRepository(context));
 
-        IHorarioRepository IRepository.Horarios => throw new NotImplementedException();
+        IHorarioRepository IRepository.Horarios => horarios ?? (horarios = new HorarioRepository(context));
 
-        IMateriaRepository IRepository.Materias => throw new NotImplementedException();
+        IMateriaRepository IRepository.Materias => materias ?? (materias = new MateriaRepository(context));
 
-        IMateriaCursoRepository IRepository.Materias_Cursos => throw new NotImplementedException();
+        IMateriaCursoRepository IRepository.Materias_Cursos => materiasCursos ?? (materiasCursos = new MateriaCursoRepository(context));
 
-        INotaRepository IRepository.Notas => throw new NotImplementedException();
+        INotaRepository IRepository.Notas => notas ?? (notas = new NotaRepository(context));
 
-        IProfessorRepository IRepository.Professores => throw new NotImplementedException();
+        IProfessorRepository IRepository.Professores => professores ?? (professores = new ProfessorRepository(context));
 
-        IProfessoresTurmasRepository IRepository.Professores_Turmas => throw new NotImplementedException();
+        IProfessoresTurmasRepository IRepository.Professores_Turmas => professoresTurmas ?? (professoresTurmas = new ProfessoresTurmasRepository(context));
 
-        ITurmaRepository IRepository.Turmas => throw new NotImplementedException();
+        ITurmaRepository IRepository.Turmas => turmas ?? (turmas = new TurmaRepository(context));
 
         public void Dispose()
         {
@@ -74,6 +86,18 @@ namespace MyAngular20.DataAccess
             pedidosItens = null;
             usuarios = null;
             unidadesDeMedidas = null;
+            alunos = null;
+            bimestres = null;
+            cursos = null;
+            horarios = null;
+            materias = null;
+            materiasCursos = null;
+            notas = null;
+            professores = null;
+            professoresTurmas = null;
+            turmas = null;
+
+            context = new MyContext(_conn);
 
         }
 
