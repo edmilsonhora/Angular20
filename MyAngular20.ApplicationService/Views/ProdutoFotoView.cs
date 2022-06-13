@@ -11,9 +11,6 @@ namespace MyAngular20.ApplicationService.Views
         public long Tamanho { get; set; }
         public string MymeType { get; set; }
         public bool Principal { get; set; }
-        public string CadastradoPor { get; set; }
-        public string AtualizadoPor { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public DateTime DataAtualizacao { get; set; }
+       
     }
 }

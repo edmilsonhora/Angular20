@@ -12,10 +12,7 @@
         public string ConfirmaSenha { get; set; }
         public int Notificacoes { get; set; }
         public string DataUltimoLogin { get; set; }
-        public string DataCadastro { get; set; }
-        public string CadastradoPor { get; set; }
-        public string DataAtualizacao { get; set; }
-        public string AtualizadoPor { get; set; }
+      
 
 
     }

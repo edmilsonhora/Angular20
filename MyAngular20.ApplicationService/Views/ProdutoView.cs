@@ -13,10 +13,7 @@ namespace MyAngular20.ApplicationService.Views
         public int CategoriaId { get; set; }
         public int UnidadeDeMedidaId { get; set; }
         public decimal QtdEmEstoque { get; set; }
-        public string CadastradoPor { get; set; }
-        public string DataCadastro { get; set; }
-        public string AtualizadoPor { get; set; }
-        public string DataAtualizacao { get; set; }
+       
     }
 
     public interface IProdutoFacade : IViewFacade<ProdutoView>

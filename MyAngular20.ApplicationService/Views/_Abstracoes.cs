@@ -2,10 +2,13 @@
 
 namespace MyAngular20.ApplicationService.Views
 {
-
     public abstract class ViewBase
     {
         public int Id { get; set; }
+        public string CadastradoPor { get; set; }
+        public string DataCadastro { get; set; }
+        public string AtualizadoPor { get; set; }
+        public string DataAtualizacao { get; set; }
     }
 
     public interface IViewFacade<T> where T : ViewBase
@@ -18,5 +21,4 @@ namespace MyAngular20.ApplicationService.Views
 
 
     }
-
 }
