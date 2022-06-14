@@ -15,6 +15,7 @@ namespace MyAngular20.DataAccess.Mappings
             builder.Property(p => p.UsuarioNomeConferencia).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.Perfil).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.Senha).HasColumnType("varchar").HasMaxLength(256).IsRequired();
+            builder.Property(p => p.Salt).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.DataUltimoLogin).HasColumnType("datetime").IsRequired();
             builder.Property(p => p.CadastradoPor).HasColumnType("varchar").HasMaxLength(256).IsRequired();
             builder.Property(p => p.AtualizadoPor).HasColumnType("varchar").HasMaxLength(256).IsRequired();

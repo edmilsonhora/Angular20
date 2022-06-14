@@ -20,6 +20,6 @@
     public interface IUsuarioFacade : IViewFacade<UsuarioView>
     {
         UsuarioView ObterPor(string nomeUsuario);
-
+        bool ChecarOuCriarAdmin();
     }
 }

@@ -14,19 +14,31 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   showLoader: boolean = false;
   loginData: LoginDataView = new LoginDataView();
-  erros: string[] = [];  
+  erros: string[] = [];
 
   @ViewChild("myinput") myInputField: ElementRef | undefined;
 
-  constructor(private service:LoginService, private router:Router) { }
-    
+  constructor(private service: LoginService, private router: Router) { }
+
 
   ngOnInit(): void {
 
-    if (localStorage["manterLogado"] !== undefined) {
-      sessionStorage["nomeUsuario"] = localStorage["nomeUsuario"];
-      this.service.estaAutenticado = true;
-      this.router.navigateByUrl('/main/home');
+    try {
+      this.erros = [];
+      let existe: boolean = false;
+
+      if (localStorage["manterLogado"] !== undefined) {
+        sessionStorage["nomeUsuario"] = localStorage["nomeUsuario"];
+        this.service.estaAutenticado = true;
+        this.router.navigateByUrl('/main/home');
+      }
+      else {
+        this.service.checarOuCriarAdmin().subscribe((result) => { existe = result }, (err) => { this.trataErro(err) });
+      }
+
+    } catch (e:any) {
+
+      this.erros = e.message.slice(0, -1).split(';');
     }
 
   }
@@ -43,8 +55,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
       this.service.autenticar(this.loginData).subscribe((result) => { this.service.estaAutenticado = result },
         (err) => { this.trataErro(err) },
         () => this.router.navigateByUrl('/main/home'));
-     
-      
+
+
     } catch (e: any) {
       this.showLoader = false;
       this.erros = e.message.slice(0, -1).split(';');

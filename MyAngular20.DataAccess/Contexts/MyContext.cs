@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyAngular20.DataAccess.Mappings;
 using MyAngular20.DomainModel;
+using System.Linq;
 
 namespace MyAngular20.DataAccess.Contexts
 {
@@ -29,6 +30,7 @@ namespace MyAngular20.DataAccess.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             modelBuilder.ApplyConfiguration(new CategoriaMap());
             modelBuilder.ApplyConfiguration(new ClienteMap());
             modelBuilder.ApplyConfiguration(new PedidoItemMap());
@@ -48,6 +50,16 @@ namespace MyAngular20.DataAccess.Contexts
             modelBuilder.ApplyConfiguration(new ProfessorTurmaMap());
             modelBuilder.ApplyConfiguration(new TurmaMap());
             modelBuilder.ApplyConfiguration(new MateriaProfessorMap());
+
+
+            var cascadeFKs = modelBuilder.Model.GetEntityTypes().SelectMany(t => t.GetForeignKeys()).Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
+
+            foreach (var fk in cascadeFKs)
+            {
+                fk.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
+
 
             base.OnModelCreating(modelBuilder);
         }

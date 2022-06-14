@@ -11,8 +11,12 @@
       <a mat-list-item [routerLink]="['/main/pedidos/list']"><mat-icon style="margin-right:5px">money</mat-icon> Pedidos</a>
       <a mat-list-item [routerLink]="['/main/categorias/list']"><mat-icon style="margin-right:5px">list</mat-icon> Categorias</a>
       <a mat-list-item [routerLink]="['/main/unidades/list']"><mat-icon style="margin-right:5px">square_foot</mat-icon> Un. Medida</a>
+      <a mat-list-item [routerLink]="['/main/cursos/list']"><mat-icon style="margin-right:5px">grading</mat-icon> Cursos</a>
+      <a mat-list-item [routerLink]="['/main/bimestres/list']"><mat-icon style="margin-right:5px">calendar_month</mat-icon> Bimestres</a>
+      <a mat-list-item [routerLink]="['/main/materias/list']"><mat-icon style="margin-right:5px">calendar_view_month</mat-icon> Matérias</a>
       <a mat-list-item [routerLink]="['/main/usuarios/list']"><mat-icon style="margin-right:5px">person</mat-icon> Usuários</a>
-      <a mat-list-item [routerLink]="['/main/configuracoes/list']"  *ngIf="usuario.perfil === 'admin'"><mat-icon style="margin-right:5px">manage_accounts</mat-icon> Admin. </a>
+
+      <a mat-list-item [routerLink]="['/main/configuracoes/list']" *ngIf="usuario.perfil === 'admin'"><mat-icon style="margin-right:5px">manage_accounts</mat-icon> Admin. </a>
       <br /><br /> <br />
       <a mat-list-item (click)="openDialog()"><mat-icon style="margin-right:5px">power_settings_new</mat-icon>Logoff</a>
 
@@ -70,10 +74,5 @@
   </mat-drawer-content>
 </mat-drawer-container>
 
-<!--<h2>Main</h2>
-<button mat-button>teste</button>
-<router-outlet>
-
-</router-outlet>-->
 
 

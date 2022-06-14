@@ -43,6 +43,8 @@ export class UsuariosService {
     return this.http.get<UsuarioView>(baseUrl + "usuarios/obterPor/" + id);
   }
 
+  
+
 
 
 }

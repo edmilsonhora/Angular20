@@ -74,5 +74,35 @@ namespace MyAngular20.ApplicationService.Facades
 
             _repository.Usuarios.Salvar(obj);
         }
+
+        public bool ChecarOuCriarAdmin()
+        {
+            var admin = _repository.Usuarios.ObterPor("Administrador");
+            if (!admin.Id.Equals(0)) return true;
+            return _repository.Usuarios.CriarAdmin(NovoAdmin());
+        }
+
+        private Usuario NovoAdmin()
+        {
+            var usuario = new Usuario()
+            {
+                UsuarioNome = "Administrador",
+                Email = "edmilson_hora@yahoo.com.br",
+                Ativo = true,
+                AtualizadoPor = "Sistema",
+                Senha = "123456",
+                ConfirmaSenha = "123456",
+                NomeCompleto = "Administrador do Sistema",
+                Perfil = "admin",
+                UsuarioNomeConferencia = Helper.GetConference("Administrador"),
+                Repository = _repository.Usuarios,
+                DataUltimoLogin = DateTime.Now,
+            };
+
+            usuario.RegistraAlteracao();            
+            usuario.Validar();
+
+            return usuario;
+        }
     }
 }

@@ -30,6 +30,12 @@ import { ClientesPesquisaComponent } from './clientes/clientes-pesquisa/clientes
 import { ProdutosPesquisaComponent } from './produtos/produtos-pesquisa/produtos-pesquisa.component';
 import { AlunosListComponent } from './alunos/alunos-list/alunos-list.component';
 import { AlunosEditComponent } from './alunos/alunos-edit/alunos-edit.component';
+import { CursosListComponent } from './cursos/cursos-list/cursos-list.component';
+import { CursosEditComponent } from './cursos/cursos-edit/cursos-edit.component';
+import { BimestresListComponent } from './bimestres/bimestres-list/bimestres-list.component';
+import { BimestresEditComponent } from './bimestres/bimestres-edit/bimestres-edit.component';
+import { MateriasListComponent } from './materias/materias-list/materias-list.component';
+import { MateriasEditComponent } from './materias/materias-edit/materias-edit.component';
 
 
 
@@ -63,6 +69,12 @@ import { AlunosEditComponent } from './alunos/alunos-edit/alunos-edit.component'
     ProdutosPesquisaComponent,
     AlunosListComponent,
     AlunosEditComponent,
+    CursosListComponent,
+    CursosEditComponent,
+    BimestresListComponent,
+    BimestresEditComponent,
+    MateriasListComponent,
+    MateriasEditComponent,
   ],
   entryComponents:[MessageboxComponent],
   imports: [

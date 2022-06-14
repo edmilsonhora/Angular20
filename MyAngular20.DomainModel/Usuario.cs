@@ -9,6 +9,7 @@ namespace MyAngular20.DomainModel
         public string NomeCompleto { get; set; }
         public string UsuarioNome { get; set; }
         public string UsuarioNomeConferencia { get; set; }
+        public string Salt { get; set; }
         public string Senha { get; set; }
         [NotMapped]
         public string ConfirmaSenha { get; set; }
@@ -24,7 +25,7 @@ namespace MyAngular20.DomainModel
             if (Id == 0)
                 throw new ApplicationException("Usuário não existe!");
 
-            if (this.Senha != HelperRijndaelCrypto.Encrypt(senha, GlobalConst.ChaveCriptografia))
+            if (this.Senha != HelperRijndaelCrypto.Encrypt(senha, Salt))
                 throw new ApplicationException("Usuário ou Senha Incorreto!");
 
             if (!Ativo)
@@ -46,7 +47,10 @@ namespace MyAngular20.DomainModel
                 if (Senha != ConfirmaSenha)
                     RegrasQuebradas.Append($"Senha não confere!{Environment.NewLine}");
                 else
-                    Senha = HelperRijndaelCrypto.Encrypt(Senha, GlobalConst.ChaveCriptografia);
+                {
+                    Salt = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
+                    Senha = HelperRijndaelCrypto.Encrypt(Senha, Salt);
+                }
             }
 
             base.Validar();
@@ -65,5 +69,6 @@ namespace MyAngular20.DomainModel
     {
         Usuario ObterPor(string usuario);
         bool NomeConferenciaExiste(Usuario usuario);
+        bool CriarAdmin(Usuario usuario);
     }
 }

@@ -12,6 +12,12 @@ namespace MyAngular20.DataAccess.Repositories
 
         }
 
+        bool IUsuarioRepository.CriarAdmin(Usuario usuario)
+        {
+            Context.Usuarios.Add(usuario);
+            return true;
+        }
+
         bool IUsuarioRepository.NomeConferenciaExiste(Usuario usuario)
         {
             return Context.Usuarios.Any(p => p.UsuarioNomeConferencia.Equals(usuario.UsuarioNomeConferencia) && p.Id != usuario.Id);

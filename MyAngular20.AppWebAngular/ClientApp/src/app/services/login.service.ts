@@ -20,6 +20,10 @@ export class LoginService {
     return this.http.post<any>(baseUrl + "logins/autenticar", login);//.pipe(catchError(this.handleError));
   }
 
+  checarOuCriarAdmin() {
+    return this.http.get<boolean>(baseUrl + "logins/checarOuCriarAdmin");
+  }
+
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

@@ -5,12 +5,18 @@ import { GuardGuard } from './guard.guard';
 import { LoginComponent } from './login/login.component';
 import { ConfiguracoesEditComponent } from './main/admin/configuracoes-edit/configuracoes-edit.component';
 import { ConfiguracoesListComponent } from './main/admin/configuracoes-list/configuracoes-list.component';
+import { BimestresEditComponent } from './main/bimestres/bimestres-edit/bimestres-edit.component';
+import { BimestresListComponent } from './main/bimestres/bimestres-list/bimestres-list.component';
 import { CategoriasEditComponent } from './main/categorias/categorias-edit/categorias-edit.component';
 import { CategoriasListComponent } from './main/categorias/categorias-list/categorias-list.component';
 import { ClientesEditComponent } from './main/clientes/clientes-edit/clientes-edit.component';
 import { ClientesListComponent } from './main/clientes/clientes-list/clientes-list.component';
+import { CursosEditComponent } from './main/cursos/cursos-edit/cursos-edit.component';
+import { CursosListComponent } from './main/cursos/cursos-list/cursos-list.component';
 import { HomeComponent } from './main/home/home/home.component';
 import { MainComponent } from './main/main.component';
+import { MateriasEditComponent } from './main/materias/materias-edit/materias-edit.component';
+import { MateriasListComponent } from './main/materias/materias-list/materias-list.component';
 import { NotificacoesComponent } from './main/notificacoes/notificacoes.component';
 import { PedidosDetailsComponent } from './main/pedidos/pedidos-details/pedidos-details.component';
 import { PedidosEditComponent } from './main/pedidos/pedidos-edit/pedidos-edit.component';
@@ -37,6 +43,9 @@ const routes: Routes = [
       { path: 'pedidos', children: [{ path: 'list', component: PedidosListComponent }, { path: 'edit/:id', component: PedidosEditComponent }, { path: 'details/:id', component: PedidosDetailsComponent }], canActivate: [GuardGuard] },
       { path: 'configuracoes', children: [{ path: 'list', component: ConfiguracoesListComponent }, { path: 'edit/:id', component: ConfiguracoesEditComponent }], canActivate: [GuardGuard] },
       { path: 'unidades', children: [{ path: 'list', component: UnidadesListComponent }, { path: 'edit/:id', component: UnidadesEditComponent }], canActivate: [GuardGuard] },
+      { path: 'cursos', children: [{ path: 'list', component: CursosListComponent }, { path: 'edit/:id', component: CursosEditComponent }], canActivate: [GuardGuard] },
+      { path: 'bimestres', children: [{ path: 'list', component: BimestresListComponent }, { path: 'edit/:id', component: BimestresEditComponent }], canActivate: [GuardGuard] },
+      { path: 'materias', children: [{ path: 'list', component: MateriasListComponent }, { path: 'edit/:id', component: MateriasEditComponent }], canActivate: [GuardGuard] },
 
     ]
   }

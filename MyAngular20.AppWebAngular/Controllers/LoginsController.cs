@@ -30,5 +30,21 @@ namespace MyAngular20.AppWebAngular.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [Route("checarOuCriarAdmin"), HttpGet]
+        public IActionResult ChecarOuCriarAdmin()
+        {
+            try
+            {
+                _facade.Usuarios.ChecarOuCriarAdmin();
+                _facade.SaveChanges();
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                _facade.Roolback();
+                return BadRequest(ex.Message.Replace(Environment.NewLine, ";"));
+            }
+        }
     }
 }
