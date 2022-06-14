@@ -12,8 +12,8 @@ namespace MyAngular20.DataAccess.Contexts
         {
             this._conn = conn;
 
-            Database.EnsureCreated();
-            Database.Migrate();
+            //Database.EnsureCreated();
+            //Database.Migrate();
         }
 
 

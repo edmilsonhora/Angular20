@@ -14,6 +14,9 @@ namespace MyAngular20.DomainModel
         {
             CampoTextoObrigatorio(nameof(Nome), Nome);
             EntidadeObrigatoria(nameof(Turma), Turma);
+            if (Id.Equals(0))
+                Turma?.AddQtdAtualDeAlunos(RegrasQuebradas);
+
             base.Validar();
         }
 

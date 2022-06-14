@@ -34,7 +34,7 @@ namespace MyAngular20.ApplicationService.Adapters
                 AtivoStr = item.Ativo ? "Ativo" : "Inativo",
                 Perfil = item.Perfil,
                 CadastradoPor = item.CadastradoPor,
-                DataCadastro = item.DataCadastro.ToString(),
+                DataCadastro = item.DataCadastro.ToShortDateString(),
                 AtualizadoPor = item.AtualizadoPor,
                 DataAtualizacao = $"{item.DataAtualizacao.ToShortDateString()} às {item.DataAtualizacao.ToShortTimeString()}",
 

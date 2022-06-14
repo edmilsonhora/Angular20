@@ -1,4 +1,5 @@
-﻿using MyAngular20.ApplicationService.Views;
+﻿using MyAngular20.ApplicationService.Adapters;
+using MyAngular20.ApplicationService.Views;
 using MyAngular20.DomainModel;
 using System.Collections.Generic;
 
@@ -14,27 +15,38 @@ namespace MyAngular20.ApplicationService.Facades
         }
         void IViewFacade<AlunoView>.Excluir(int id)
         {
-            throw new System.NotImplementedException();
+            var obj = _repository.Alunos.ObterPor(id);
+            _repository.Alunos.Excluir(obj);
         }
 
         PaginadorDeListas<AlunoView> IViewFacade<AlunoView>.ObterPaginado(int pageIndex, int pageSize)
         {
-            throw new System.NotImplementedException();
+            int totalRegistros = _repository.Alunos.TotalDeRegistros();
+            var lista = _repository.Alunos.ObterPaginado(pageIndex, pageSize).ConvertToView();
+
+            return new PaginadorDeListas<AlunoView>(lista, totalRegistros);
         }
 
         AlunoView IViewFacade<AlunoView>.ObterPor(int id)
         {
-            throw new System.NotImplementedException();
+            return _repository.Alunos.ObterPor(id).ConvertToView();
         }
 
         List<AlunoView> IViewFacade<AlunoView>.ObterTodos()
         {
-            throw new System.NotImplementedException();
+            return _repository.Alunos.ObterTodos().ConvertToView();
         }
 
         void IViewFacade<AlunoView>.Salvar(AlunoView view)
         {
-            throw new System.NotImplementedException();
+            var obj = view.Id == 0 ? new Aluno() : _repository.Alunos.ObterPor(view.Id);
+            obj.Nome = view.Nome;
+            obj.Turma = _repository.Turmas.ObterPor(view.TurmaId);
+            obj.AtualizadoPor = view.AtualizadoPor;            
+            obj.RegistraAlteracao();
+            obj.Validar();
+
+            _repository.Alunos.Salvar(obj);
         }
     }
 }

@@ -8,8 +8,7 @@ namespace MyAngular20.DataAccess.Repositories
 {
     internal abstract class AbstractRepository<T> : IRepositoryBase<T> where T : EntityBase
     {
-        //private readonly MyContext _context;
-
+       
         public MyContext Context { get; set; }
 
         public AbstractRepository(MyContext context)
@@ -19,6 +18,7 @@ namespace MyAngular20.DataAccess.Repositories
 
         void IRepositoryBase<T>.Excluir(T entity)
         {
+            if (entity == null) return;
             Context.Set<T>().Remove(entity);
         }
 

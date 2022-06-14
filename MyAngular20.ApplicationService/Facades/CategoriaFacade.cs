@@ -17,8 +17,7 @@ namespace MyAngular20.ApplicationService.Facades
 
         void IViewFacade<CategoriaView>.Excluir(int id)
         {
-            var obj = _repository.Categorias.ObterPor(id);
-            if (obj == null) return;
+            var obj = _repository.Categorias.ObterPor(id);           
             _repository.Categorias.Excluir(obj);
         }
 
