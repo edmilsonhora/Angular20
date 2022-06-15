@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace MyAngular20.CommonPlace
 {
@@ -23,6 +24,25 @@ namespace MyAngular20.CommonPlace
             }
 
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC).Replace(" ", "").ToLower();
+        }
+
+        public static string ToUrl(this string texto)
+        {
+            var normalizedString = texto.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+
+            foreach (var c in normalizedString)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            var novoTexto = stringBuilder.ToString().Normalize(NormalizationForm.FormC).Replace(" ","_").ToLower();
+
+            return Regex.Replace(novoTexto, @"[^0-9a-zA-Z\._]", "");
         }
     }
 
