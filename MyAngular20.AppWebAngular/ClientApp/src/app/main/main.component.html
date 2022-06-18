@@ -1,10 +1,10 @@
 <mat-drawer-container style="height:100%">
   <mat-drawer #sidenav mode="side" opened>
-    <div style="height:80px; text-align:center; margin-top:20px">
+    <div style="height:50px; text-align:center; margin-top:20px">
       <h2>My App</h2>
     </div>
 
-    <mat-nav-list>
+    <mat-nav-list style="width:180px">
       <a mat-list-item [routerLink]="['/main/home']"><mat-icon style="margin-right:5px">home</mat-icon> Home</a>
       <a mat-list-item [routerLink]="['/main/clientes/list']"><mat-icon style="margin-right:5px">people</mat-icon> Clientes</a>
       <a mat-list-item [routerLink]="['/main/produtos/list']"><mat-icon style="margin-right:5px">laptop_mac</mat-icon> Produtos</a>
@@ -14,6 +14,8 @@
       <a mat-list-item [routerLink]="['/main/cursos/list']"><mat-icon style="margin-right:5px">grading</mat-icon> Cursos</a>
       <a mat-list-item [routerLink]="['/main/bimestres/list']"><mat-icon style="margin-right:5px">calendar_month</mat-icon> Bimestres</a>
       <a mat-list-item [routerLink]="['/main/materias/list']"><mat-icon style="margin-right:5px">calendar_view_month</mat-icon> Matérias</a>
+      <a mat-list-item [routerLink]="['/main/turmas/list']"><mat-icon style="margin-right:5px">groups</mat-icon> Turmas</a>
+      <a mat-list-item [routerLink]="['/main/professores/list']"><mat-icon style="margin-right:5px">school</mat-icon> Professores</a>
       <a mat-list-item [routerLink]="['/main/usuarios/list']"><mat-icon style="margin-right:5px">person</mat-icon> Usuários</a>
 
       <a mat-list-item [routerLink]="['/main/configuracoes/list']" *ngIf="usuario.perfil === 'admin'"><mat-icon style="margin-right:5px">manage_accounts</mat-icon> Admin. </a>

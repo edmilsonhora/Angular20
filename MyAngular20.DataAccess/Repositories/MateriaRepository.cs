@@ -19,7 +19,7 @@ namespace MyAngular20.DataAccess.Repositories
 
         List<Materia> IMateriaRepository.ObterPor(int[] materiasIds)
         {
-            return Context.Materias.Where(p => materiasIds.Contains(p.Id)).AsNoTracking().ToList();
+            return Context.Materias.Where(p => materiasIds.Contains(p.Id)).ToList();
         }
     }
 }

@@ -43,6 +43,7 @@ namespace MyAngular20.ApplicationService.Facades
             obj.Nome = view.Nome;
             obj.Curso = _repository.Cursos.ObterPor(view.CursoId);
             obj.Limite = view.Limite;
+            obj.Ano = view.Ano;
             obj.AtualizadoPor = view.AtualizadoPor;
             obj.RegistraAlteracao();
             obj.Validar();

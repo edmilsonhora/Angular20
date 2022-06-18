@@ -1,20 +1,30 @@
 
 
-<span class="mat-title">Bimstres-Edit</span>
+<span class="mat-title">Bimestres-Edit</span>
 <mat-divider></mat-divider>
 <div style="text-align:end; font-size:x-small; color:dimgrey" *ngIf="entity.id != 0">Última atualização por: {{entity.atualizadoPor}} em {{entity.dataAtualizacao}}</div>
 
 <app-avisos [erros]="erros"></app-avisos>
 
-<mat-form-field class="ffied" appearance="fill">
+<mat-form-field class="ffied" appearance="fill" >
   <mat-label>Nome:</mat-label>
-  <input matInput type="text" [(ngModel)]="entity.nome">
+  <input matInput type="text" [(ngModel)]="entity.nome" required>
 </mat-form-field>
 
+
+
 <mat-form-field class="ffied" appearance="fill">
-  <mat-label>Ano:</mat-label>
-  <input matInput type="text" [(ngModel)]="entity.ano">
+  <mat-label>Ano</mat-label>
+  <mat-select [(ngModel)]="entity.ano" required>
+    <mat-option value="2021">
+     <span>2021</span>
+    </mat-option>
+    <mat-option value="2022">
+      <span>2022</span>
+    </mat-option>
+  </mat-select>
 </mat-form-field>
+
 
 <br />
 <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>  &nbsp; | &nbsp;<a [routerLink]="['/main/bimestres/list']">Voltar para Lista</a>

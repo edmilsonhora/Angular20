@@ -36,6 +36,10 @@ import { BimestresListComponent } from './bimestres/bimestres-list/bimestres-lis
 import { BimestresEditComponent } from './bimestres/bimestres-edit/bimestres-edit.component';
 import { MateriasListComponent } from './materias/materias-list/materias-list.component';
 import { MateriasEditComponent } from './materias/materias-edit/materias-edit.component';
+import { TurmasListComponent } from './turmas/turmas-list/turmas-list.component';
+import { TurmasEditComponent } from './turmas/turmas-edit/turmas-edit.component';
+import { ProfessoresEditComponent } from './professores/professores-edit/professores-edit.component';
+import { ProfessoresListComponent } from './professores/professores-list/professores-list.component';
 
 
 
@@ -75,6 +79,10 @@ import { MateriasEditComponent } from './materias/materias-edit/materias-edit.co
     BimestresEditComponent,
     MateriasListComponent,
     MateriasEditComponent,
+    TurmasListComponent,
+    TurmasEditComponent,
+    ProfessoresEditComponent,
+    ProfessoresListComponent,
   ],
   entryComponents:[MessageboxComponent],
   imports: [

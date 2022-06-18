@@ -23,6 +23,10 @@ import { PedidosEditComponent } from './main/pedidos/pedidos-edit/pedidos-edit.c
 import { PedidosListComponent } from './main/pedidos/pedidos-list/pedidos-list.component';
 import { ProdutosEditComponent } from './main/produtos/produtos-edit/produtos-edit.component';
 import { ProdutosListComponent } from './main/produtos/produtos-list/produtos-list.component';
+import { ProfessoresEditComponent } from './main/professores/professores-edit/professores-edit.component';
+import { ProfessoresListComponent } from './main/professores/professores-list/professores-list.component';
+import { TurmasEditComponent } from './main/turmas/turmas-edit/turmas-edit.component';
+import { TurmasListComponent } from './main/turmas/turmas-list/turmas-list.component';
 import { UnidadesEditComponent } from './main/unidades/unidades-edit/unidades-edit.component';
 import { UnidadesListComponent } from './main/unidades/unidades-list/unidades-list.component';
 import { UsuariosEditComponent } from './main/usuarios/usuarios-edit/usuarios-edit.component';
@@ -46,6 +50,8 @@ const routes: Routes = [
       { path: 'cursos', children: [{ path: 'list', component: CursosListComponent }, { path: 'edit/:id', component: CursosEditComponent }], canActivate: [GuardGuard] },
       { path: 'bimestres', children: [{ path: 'list', component: BimestresListComponent }, { path: 'edit/:id', component: BimestresEditComponent }], canActivate: [GuardGuard] },
       { path: 'materias', children: [{ path: 'list', component: MateriasListComponent }, { path: 'edit/:id', component: MateriasEditComponent }], canActivate: [GuardGuard] },
+      { path: 'turmas', children: [{ path: 'list', component: TurmasListComponent }, { path: 'edit/:id', component: TurmasEditComponent }], canActivate: [GuardGuard] },
+      { path: 'professores', children: [{ path: 'list', component: ProfessoresListComponent }, { path: 'edit/:id', component: ProfessoresEditComponent }], canActivate: [GuardGuard] },
 
     ]
   }

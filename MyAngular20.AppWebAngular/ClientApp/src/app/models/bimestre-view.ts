@@ -4,7 +4,7 @@ export class BimestreView {
 
   id: number = 0;
   nome: string = "";
-  ano: number = 0;
+  ano: string = "";
   cadastradoPor: string = "";
   dataCadastro: string = "";
   atualizadoPor: string = "";
@@ -19,7 +19,7 @@ export class BimestreView {
     if (this.nome === "")
       regrasQuebradas += "O campo nome é obrigatório.;";
 
-    if (this.ano === 0)
+    if (this.ano === "")
       regrasQuebradas += "O campo ano é obrigatório.;";
 
     if (this.atualizadoPor === "")

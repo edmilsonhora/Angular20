@@ -20,7 +20,7 @@ namespace MyAngular20.ApplicationService
         private IHorarioFacade horarios;
         private IMateriaFacade materias;
         private IMateriaCursoFacade materiasCursos;
-        private IMateriaProfessorFacade materiasProfessores;
+        //private IMateriaProfessorFacade materiasProfessores;
         private INotaFacade notas;
         private IProfessorFacade professores;
         private IProfessorTurmaFacade professoresTurmas;
@@ -58,7 +58,7 @@ namespace MyAngular20.ApplicationService
 
         IMateriaCursoFacade IFacade.MateriasCursos => materiasCursos ?? (materiasCursos = new MateriaCursoFacade(repository));
 
-        IMateriaProfessorFacade IFacade.MateriasProfessores => materiasProfessores ?? (materiasProfessores = new MateriaProfessorFacade(repository));
+        //IMateriaProfessorFacade IFacade.MateriasProfessores => materiasProfessores ?? (materiasProfessores = new MateriaProfessorFacade(repository));
 
         INotaFacade IFacade.Notas => notas ?? (notas = new NotaFacade(repository));
 
@@ -83,7 +83,7 @@ namespace MyAngular20.ApplicationService
             horarios = null;
             materias = null;
             materiasCursos = null;
-            materiasProfessores = null;
+            //materiasProfessores = null;
             notas = null;
             professores = null;
             professoresTurmas = null;

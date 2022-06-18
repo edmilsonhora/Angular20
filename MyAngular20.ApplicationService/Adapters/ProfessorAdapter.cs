@@ -1,6 +1,7 @@
 ﻿using MyAngular20.ApplicationService.Views;
 using MyAngular20.DomainModel;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MyAngular20.ApplicationService.Adapters
 {
@@ -26,6 +27,7 @@ namespace MyAngular20.ApplicationService.Adapters
             {
                 Id = item.Id,
                 Nome = item.Nome,
+                MateriasIds = item.Materias.Select(p => p.Id).ToArray(),
                 CadastradoPor = item.CadastradoPor,
                 AtualizadoPor = item.AtualizadoPor,
                 DataAtualizacao = $"{item.DataAtualizacao.ToShortDateString()} às {item.DataAtualizacao.ToShortTimeString()}",

@@ -7,7 +7,7 @@ namespace MyAngular20.DomainModel
     {
         public string Nome { get; set; }
         public string NomeConferencia { get; set; }
-        public List<MateriaProfessor> Professores { get; set; }
+        public List<Professor> Professores { get; set; }
 
         [NotMapped]
         public IMateriaRepository Repository { get; set; }

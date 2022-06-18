@@ -1,6 +1,7 @@
 ﻿using MyAngular20.ApplicationService.Adapters;
 using MyAngular20.ApplicationService.Views;
 using MyAngular20.DomainModel;
+using System;
 using System.Collections.Generic;
 
 namespace MyAngular20.ApplicationService.Facades
@@ -17,6 +18,7 @@ namespace MyAngular20.ApplicationService.Facades
         void IViewFacade<ProfessorView>.Excluir(int id)
         {
             var obj = _repository.Professores.ObterPor(id);
+            obj.Materias.Clear();
             _repository.Professores.Excluir(obj);
         }
 
@@ -42,27 +44,14 @@ namespace MyAngular20.ApplicationService.Facades
         {
             var obj = view.Id == 0 ? new Professor() : _repository.Professores.ObterPor(view.Id);
             obj.Nome = view.Nome;
-            obj.Materias =  Obter(_repository.Materias.ObterPor(view.MateriasIds), view.AtualizadoPor);
+            obj.Materias?.Clear();
+            obj.Materias = _repository.Materias.ObterPor(view.MateriasIds);
             obj.AtualizadoPor = view.AtualizadoPor;
             obj.RegistraAlteracao();
             obj.Validar();
 
             _repository.Professores.Salvar(obj);
         }
-
-        private List<MateriaProfessor> Obter(List<Materia> list, string atualizadoPor)
-        {
-            var novaLista = new List<MateriaProfessor>();
-
-            foreach (var item in list)
-            {
-                var nItem = new MateriaProfessor { Materia = item, AtualizadoPor = atualizadoPor };
-                nItem.Validar();
-                nItem.RegistraAlteracao();
-                novaLista.Add(nItem);
-            }
-
-            return novaLista;
-        }
+       
     }
 }

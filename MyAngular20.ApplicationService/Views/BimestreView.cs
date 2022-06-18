@@ -3,7 +3,7 @@
     public class BimestreView : ViewBase
     {
         public string Nome { get; set; }
-        public int Ano { get; set; }
+        public string Ano { get; set; }
     }
 
     public interface IBimestreFacade : IViewFacade<BimestreView> { }

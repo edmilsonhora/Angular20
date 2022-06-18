@@ -49,7 +49,7 @@ namespace MyAngular20.DataAccess.Contexts
             modelBuilder.ApplyConfiguration(new ProfessorMap());
             modelBuilder.ApplyConfiguration(new ProfessorTurmaMap());
             modelBuilder.ApplyConfiguration(new TurmaMap());
-            modelBuilder.ApplyConfiguration(new MateriaProfessorMap());
+            //modelBuilder.ApplyConfiguration(new MateriaProfessorMap());
 
 
             var cascadeFKs = modelBuilder.Model.GetEntityTypes().SelectMany(t => t.GetForeignKeys()).Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
@@ -81,7 +81,7 @@ namespace MyAngular20.DataAccess.Contexts
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<MateriaCurso> Materias_Cursos { get; set; }
         public DbSet<ProfessorTurma> Professores_Turmas { get; set; }
-        public DbSet<MateriaProfessor> Materias_Professores { get; set; }
+        //public DbSet<MateriaProfessor> Materias_Professores { get; set; }
 
     }
 }

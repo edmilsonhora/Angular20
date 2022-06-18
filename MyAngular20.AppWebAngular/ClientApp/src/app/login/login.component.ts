@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
         this.service.estaAutenticado = true;
         this.router.navigateByUrl('/main/home');
       }
-      else {
-        this.service.checarOuCriarAdmin().subscribe((result) => { existe = result }, (err) => { this.trataErro(err) });
-      }
+      //else {
+      //  this.service.checarOuCriarAdmin().subscribe((result) => { existe = result }, (err) => { this.trataErro(err) });
+      //}
 
     } catch (e:any) {
 
