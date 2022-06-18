@@ -1,0 +1,50 @@
+<span class="mat-title">Professores-List</span>
+<mat-divider></mat-divider>
+
+
+<button mat-icon-button matTooltip="Novo Item" matTooltipPosition="after">
+  <mat-icon [routerLink]="['/main/professores/edit/0']">upload_file</mat-icon>
+</button>
+
+
+<table mat-table class="mat-elevation-z8" [dataSource]="list">
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef style="width:46px; text-align:center">Edit</th>
+    <td mat-cell *matCellDef="let entity">
+      <button mat-icon-button matTooltip="Edit" matTooltipPosition="after">
+        <mat-icon [routerLink]="['/main/professores/edit/', entity.id]">mode_edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef style="margin-left:36px;">Nome</th>
+    <td mat-cell *matCellDef="let entity">{{entity.nome}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="cadastradoPor">
+    <th mat-header-cell *matHeaderCellDef>Cadastrado Por</th>
+    <td mat-cell *matCellDef="let entity">{{entity.cadastradoPor}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataCadastro">
+    <th mat-header-cell *matHeaderCellDef>Data Cadastro</th>
+    <td mat-cell *matCellDef="let entity">{{entity.dataCadastro}}</td>
+  </ng-container>
+  <ng-container matColumnDef="del">
+    <th mat-header-cell *matHeaderCellDef style="width:36px;">Del</th>
+    <td mat-cell *matCellDef="let entity">
+      <button mat-icon-button matTooltip="Del">
+        <mat-icon (click)="confirmaExcluir(entity)">delete_outline</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+  <tr mat-row *matRowDef="let entity; columns:colunas" class="example-element-row"></tr>
+</table>
+<app-lista-vazia *ngIf="paginador?.totalRegistros === 0"></app-lista-vazia>
+<mat-paginator class="mat-elevation-z8" [length]="paginador?.totalRegistros" [pageSize]="6" [pageSizeOptions]="[6,12,24]" showFirstLastButtons>
+</mat-paginator>
+
+
+
+

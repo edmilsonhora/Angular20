@@ -1,0 +1,25 @@
+
+<span class="mat-title">Professores-Edit</span>
+<mat-divider></mat-divider>
+<div style="text-align:end; font-size:x-small; color:dimgrey" *ngIf="entity.id != 0">Última atualização por: {{entity.atualizadoPor}} em {{entity.dataAtualizacao}}</div>
+
+<app-avisos [erros]="erros"></app-avisos>
+
+<mat-form-field class="ffied" appearance="fill">
+  <mat-label>Nome:</mat-label>
+  <input matInput type="text" [(ngModel)]="entity.nome">
+</mat-form-field>
+
+<mat-form-field class="ffied" appearance="outline">
+  <mat-label>Materias:</mat-label>
+  <mat-select [(ngModel)]="entity.materiasIds" multiple>
+    <mat-option *ngFor="let materia of materiasList" [value]="materia.id">
+      {{materia.nome}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br />
+<button mat-raised-button color="primary" (click)="salvar()">Salvar</button>  &nbsp; | &nbsp;<a [routerLink]="['/main/professores/list']">Voltar para Lista</a>
+
+
