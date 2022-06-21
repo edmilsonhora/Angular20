@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyAngular20.CommonPlace;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -130,6 +131,7 @@ namespace MyAngular20.DomainModel
         void Excluir(T entity);
         T ObterPor(int id);
         List<T> ObterPaginado(int pageIndex, int pageSize);
+        List<T> ObterPaginado(FiltroPagina filtro);
         List<T> ObterTodos();
         int TotalDeRegistros();
     }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyAngular20.ApplicationService;
 using MyAngular20.ApplicationService.Views;
+using MyAngular20.CommonPlace;
 using System;
 
 namespace MyAngular20.AppWebAngular.Controllers
@@ -35,9 +36,22 @@ namespace MyAngular20.AppWebAngular.Controllers
         public IActionResult ObterPaginado(int pageIndex, int pageSize)
         {
             try
-            {
-
+            {               
                 return Ok(_facade.Materias.ObterPaginado(pageIndex, pageSize));
+            }
+            catch (Exception ex)
+            {
+                _facade.Roolback();
+                return BadRequest(ex.Message.Replace(Environment.NewLine, ";"));
+            }
+        }
+
+        [Route("obterPaginadoPor"), HttpPost]
+        public IActionResult ObterPaginadoPor(FiltroPagina filtro)
+        {
+            try
+            {               
+                return Ok(_facade.Materias.ObterPaginado(filtro));
             }
             catch (Exception ex)
             {

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { baseUrl } from '../../environments/environment';
+import { FiltroPageView } from '../models/filtro-page-view';
 import { MateriaView } from '../models/materia-view';
 import { PaginadorListas } from '../models/paginador-listas';
 
@@ -17,6 +18,10 @@ export class MateriasService {
 
   obterPaginado(pageIndex: number, pageSize: number) {
     return this.http.get<PaginadorListas<MateriaView[]>>(baseUrl + "materias/obterPaginado/" + pageIndex + "/" + pageSize);
+  }
+
+  obterPaginadoPor(filtro: FiltroPageView) {
+    return this.http.post<PaginadorListas<MateriaView[]>>(baseUrl + "materias/obterPaginadoPor", filtro);
   }
 
   salvar(materia: MateriaView) {

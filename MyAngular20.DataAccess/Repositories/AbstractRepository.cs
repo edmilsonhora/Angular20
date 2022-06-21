@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyAngular20.CommonPlace;
 using MyAngular20.DataAccess.Contexts;
 using MyAngular20.DomainModel;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ namespace MyAngular20.DataAccess.Repositories
 {
     internal abstract class AbstractRepository<T> : IRepositoryBase<T> where T : EntityBase
     {
-       
+
         public MyContext Context { get; set; }
 
         public AbstractRepository(MyContext context)
@@ -51,6 +52,11 @@ namespace MyAngular20.DataAccess.Repositories
         int IRepositoryBase<T>.TotalDeRegistros()
         {
             return Context.Set<T>().AsNoTracking().Count();
+        }
+
+        List<T> IRepositoryBase<T>.ObterPaginado(FiltroPagina filtro)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -29,6 +29,15 @@ namespace MyAngular20.ApplicationService.Facades
             return new PaginadorDeListas<MateriaView>(lista, totalRegistros);
         }
 
+        PaginadorDeListas<MateriaView> IMateriaFacade.ObterPaginado(FiltroPagina filtro)
+        {
+
+            int totalRegistros = _repository.Materias.TotalDeRegistros();
+            var lista = _repository.Materias.ObterPaginado(filtro).ConvertToView();
+
+            return new PaginadorDeListas<MateriaView>(lista, totalRegistros);
+        }
+
         MateriaView IViewFacade<MateriaView>.ObterPor(int id)
         {
             return _repository.Materias.ObterPor(id).ConvertToView();

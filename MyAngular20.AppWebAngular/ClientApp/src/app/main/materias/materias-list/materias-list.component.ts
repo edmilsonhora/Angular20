@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { tap } from 'rxjs';
+import { FiltroPageView } from '../../../models/filtro-page-view';
 import { MateriaView } from '../../../models/materia-view';
 import { PaginadorListas } from '../../../models/paginador-listas';
 import { MateriasService } from '../../../services/materias.service';
@@ -14,24 +16,31 @@ import { ConfirmaExclusaoComponent } from '../../utils/confirma-exclusao/confirm
 })
 export class MateriasListComponent implements OnInit, AfterViewInit {
 
-  paginador!: PaginadorListas<MateriaView[]>;
-  colunas = ["edit", "nome", "cadastradoPor", "dataCadastro", "del"];
-  list: MateriaView[] = [];
-
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
+  @ViewChild(MatSort)
+  sort!: MatSort;
+
+  paginador!: PaginadorListas<MateriaView[]>;
+
+  colunas = ["edit", "nome", "cadastradoPor", "dataCadastro", "del"];
+  list: MateriaView[] = [];
+  filtro!: FiltroPageView;
+
+ 
 
   constructor(private service: MateriasService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.paginador = { lista: [], totalRegistros: 0 };
-    this.carregarDados(this.paginator?.pageIndex ?? 0, this.paginator?.pageSize ?? 6);
+    this.filtro = new FiltroPageView(this.paginator?.pageIndex ?? 0, this.paginator?.pageSize ?? 6, "asc", "");
+    this.carregarDados(this.filtro);
 
   }
 
-  carregarDados(pageIndex: number, pageSize: number) {
+  carregarDados(filtro: FiltroPageView) {
 
-    this.service.obterPaginado(pageIndex, pageSize).pipe(tap(dados => { this.paginador = dados })).subscribe((result) => { this.exibir() });
+    this.service.obterPaginadoPor(filtro).pipe(tap(dados => { this.paginador = dados })).subscribe((result) => { this.exibir() });
 
   }
 
@@ -47,11 +56,14 @@ export class MateriasListComponent implements OnInit, AfterViewInit {
 
   private excluir(result: any, id: number) {
     if (result !== "true") return;
-    this.service.excluir(id).subscribe((result) => { }, (err) => { }, () => { this.carregarDados(this.paginator.pageIndex, this.paginator.pageSize) });
+    this.filtro = new FiltroPageView(this.paginator.pageIndex, this.paginator.pageSize, this.sort.direction, this.sort.active);
+    this.service.excluir(id).subscribe((result) => { }, (err) => { }, () => { this.carregarDados(this.filtro) });
   }
 
   ngAfterViewInit(): void {
-    this.paginator.page.pipe(tap(() => this.carregarDados(this.paginator.pageIndex, this.paginator.pageSize))).subscribe();
+
+    this.sort.sortChange.pipe(tap(() => this.carregarDados(new FiltroPageView(this.paginator.pageIndex, this.paginator.pageSize, this.sort.direction, this.sort.active)))).subscribe();
+    this.paginator.page.pipe(tap(() => this.carregarDados(new FiltroPageView(this.paginator.pageIndex, this.paginator.pageSize, this.sort.direction, this.sort.active)))).subscribe();
   }
 
 }
