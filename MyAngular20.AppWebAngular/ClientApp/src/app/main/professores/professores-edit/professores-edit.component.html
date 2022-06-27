@@ -19,6 +19,33 @@
   </mat-select>
 </mat-form-field>
 
+
+<!--<mat-form-field class="example-chip-list" appearance="fill">
+  <mat-label>Materias</mat-label>
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let fruit of fruits"
+              (removed)="remove(fruit)">
+      {{fruit}}
+      <button matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+    <input placeholder="Nova Matéria..."
+           #fruitInput
+           [formControl]="fruitCtrl"
+           [matAutocomplete]="auto"
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let materia of materiasList | async" [value]="materia.id">
+      {{materia.nome}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>-->
+
+
 <br />
 <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>  &nbsp; | &nbsp;<a [routerLink]="['/main/professores/list']">Voltar para Lista</a>
 

@@ -16,6 +16,7 @@ import { ConfirmaExclusaoComponent } from '../../utils/confirma-exclusao/confirm
 })
 export class MateriasListComponent implements OnInit, AfterViewInit {
 
+  erros: string[] = [];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
@@ -57,7 +58,7 @@ export class MateriasListComponent implements OnInit, AfterViewInit {
   private excluir(result: any, id: number) {
     if (result !== "true") return;
     this.filtro = new FiltroPageView(this.paginator.pageIndex, this.paginator.pageSize, this.sort.direction, this.sort.active);
-    this.service.excluir(id).subscribe((result) => { }, (err) => { }, () => { this.carregarDados(this.filtro) });
+    this.service.excluir(id).subscribe((result) => { }, (err) => { this.erros = err.error.slice(0, -1).split(';') }, () => { this.carregarDados(this.filtro) });
   }
 
   ngAfterViewInit(): void {

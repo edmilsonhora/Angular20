@@ -21,6 +21,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 
@@ -46,7 +47,8 @@ const Material = [
   MatBadgeModule,
   ScrollingModule,
   MatProgressSpinnerModule,
-  MatSortModule
+  MatSortModule,
+  MatChipsModule
   
 ]
 

@@ -79,7 +79,7 @@ export class ProdutosEditComponent implements OnInit, AfterViewInit {
   private limpar(): void {
 
     if (this.entity.id > 0)
-      this.router.navigate(['main/categorias/list']);
+      this.router.navigate(['main/produtos/list']);
     else if (this.erros.length === 0) {
       this.openSnackBar("registro criado com sucesso!")
       this.entity = new ProdutoView();

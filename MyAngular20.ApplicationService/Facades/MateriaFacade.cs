@@ -54,8 +54,8 @@ namespace MyAngular20.ApplicationService.Facades
             obj.Nome = view.Nome;
             obj.NomeConferencia = Helper.GetConference(view.Nome);
             obj.AtualizadoPor = view.AtualizadoPor;
-            obj.Repository = _repository.Materias
-;            obj.RegistraAlteracao();
+            obj.Repository = _repository.Materias;
+            obj.RegistraAlteracao();
             obj.Validar();
 
             _repository.Materias.Salvar(obj);
