@@ -22,6 +22,7 @@ namespace MyAngular20.AppWebAngular
         {
             services.AddControllersWithViews();
             services.AddResponseCaching();
+            //services.Configure<MyConfigSettings>(Configuration.GetSection("Dados"));
             services.AddScoped<IFacade>(p => new Facade(Configuration.GetConnectionString("DefaultConnection")));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -46,12 +46,6 @@ namespace MyAngular20.CommonPlace
         }
     }
 
-    //public class GlobalConst
-    //{
-    //    public const string ChaveCriptografia = "93C1C02B24444745ACD65381BD2F8913";
-    //}
-
-
     public class HelperRijndaelCrypto
     {
         private static byte[] Encrypt(byte[] clearText, byte[] key, byte[] iv)
