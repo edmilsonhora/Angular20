@@ -40,6 +40,7 @@ import { TurmasListComponent } from './turmas/turmas-list/turmas-list.component'
 import { TurmasEditComponent } from './turmas/turmas-edit/turmas-edit.component';
 import { ProfessoresEditComponent } from './professores/professores-edit/professores-edit.component';
 import { ProfessoresListComponent } from './professores/professores-list/professores-list.component';
+import { CursosPesquisarComponent } from './cursos/cursos-pesquisar/cursos-pesquisar.component';
 
 
 
@@ -83,6 +84,7 @@ import { ProfessoresListComponent } from './professores/professores-list/profess
     TurmasEditComponent,
     ProfessoresEditComponent,
     ProfessoresListComponent,
+    CursosPesquisarComponent,
   ],
   entryComponents:[MessageboxComponent],
   imports: [
