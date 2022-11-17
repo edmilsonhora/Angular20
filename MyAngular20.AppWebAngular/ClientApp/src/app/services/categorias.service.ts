@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { baseUrl } from '../../environments/environment';
 import { CategoriaView } from '../models/categoria-view';
 import { PaginadorListas } from '../models/paginador-listas';
+import { firstValueFrom } from 'rxjs';
 
 
 @Injectable({
@@ -16,8 +17,9 @@ export class CategoriasService {
     return this.http.get<CategoriaView[]>(baseUrl + "categorias/obterTodos");
   }
 
-  obterPaginado(pageIndex: number, pageSize: number) {
-    return this.http.get<PaginadorListas<CategoriaView[]>>(baseUrl + "categorias/obterPaginado/" + pageIndex + "/" + pageSize);
+ async obterPaginado(pageIndex: number, pageSize: number): Promise<PaginadorListas<CategoriaView[]>> {
+   let httpResponse = this.http.get<PaginadorListas<CategoriaView[]>>(baseUrl + "categorias/obterPaginado/" + pageIndex + "/" + pageSize);
+   return firstValueFrom(httpResponse);
   }
 
   salvar(categoria: CategoriaView) {
@@ -25,9 +27,9 @@ export class CategoriasService {
 
   }
 
-  excluir(id: number) {
-
-    return this.http.delete(baseUrl + "categorias/excluir/" + id);
+ async excluir(id: number):Promise<any> {
+   let httpResponse = this.http.delete(baseUrl + "categorias/excluir/" + id);
+   return firstValueFrom(httpResponse);
   }
 
   obterPor(id: number) {

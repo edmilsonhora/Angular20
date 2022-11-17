@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { baseUrl } from '../../environments/environment';
 import { PaginadorListas } from '../models/paginador-listas';
 import { UsuarioView } from '../models/usuario-view';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,9 @@ export class UsuariosService {
     return this.http.get<UsuarioView[]>(baseUrl + "usuarios/obterTodos");
   }
 
-  obterPaginado(pageIndex: number, pageSize: number) {
-    return this.http.get<PaginadorListas<UsuarioView[]>>(baseUrl + "usuarios/obterPaginado/" + pageIndex + "/" + pageSize);
+ async obterPaginado(pageIndex: number, pageSize: number): Promise<PaginadorListas<UsuarioView[]>> {
+   let httpResponse = this.http.get<PaginadorListas<UsuarioView[]>>(baseUrl + "usuarios/obterPaginado/" + pageIndex + "/" + pageSize);
+   return firstValueFrom(httpResponse);
   }
 
   salvar(usuario: UsuarioView) {
