@@ -3,7 +3,7 @@
 <mat-divider></mat-divider>
 <div style="text-align:end; font-size:x-small; color:dimgrey" *ngIf="entity.id != 0">Última atualização por: {{entity.atualizadoPor}} em {{entity.dataAtualizacao}}</div>
 
-
+<app-avisos [erros]="erros"></app-avisos>
 
 <mat-form-field class="ffied" appearance="fill">
   <mat-label>Código:</mat-label>

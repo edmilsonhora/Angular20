@@ -60,6 +60,18 @@ export class ClientesEditComponent implements OnInit {
     }
   }
 
+  apenasAlfanumericos(event: any) {
+
+    let inp = String.fromCharCode(event.keyCode);
+
+    if (/[a-zA-Z0-9 ]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
+    }
+  }
+
   private openSnackBar(message: string) {
 
     let horizontalPosition: MatSnackBarHorizontalPosition = 'center';

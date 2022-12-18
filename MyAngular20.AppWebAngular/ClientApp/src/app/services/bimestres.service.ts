@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { baseUrl } from '../../environments/environment';
 import { BimestreView } from '../models/bimestre-view';
 import { PaginadorListas } from '../models/paginador-listas';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,9 @@ export class BimestresService {
     return this.http.get<BimestreView[]>(baseUrl + "bimestres/obterTodos");
   }
 
-  obterPaginado(pageIndex: number, pageSize: number) {
-    return this.http.get<PaginadorListas<BimestreView[]>>(baseUrl + "bimestres/obterPaginado/" + pageIndex + "/" + pageSize);
+ async obterPaginado(pageIndex: number, pageSize: number): Promise<PaginadorListas<BimestreView[]>> {
+   let httpResponse = this.http.get<PaginadorListas<BimestreView[]>>(baseUrl + "bimestres/obterPaginado/" + pageIndex + "/" + pageSize);
+   return firstValueFrom(httpResponse);
   }
 
   salvar(bimestre: BimestreView) {
@@ -24,9 +26,9 @@ export class BimestresService {
 
   }
 
-  excluir(id: number) {
-
-    return this.http.delete(baseUrl + "bimestres/excluir/" + id);
+ async excluir(id: number):Promise<any> {
+   let httpResponse = this.http.delete(baseUrl + "bimestres/excluir/" + id);
+   return firstValueFrom(httpResponse);
   }
 
   obterPor(id: number) {

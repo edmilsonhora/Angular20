@@ -31,7 +31,7 @@ namespace MyAngular20.DomainModel
             CampoNumericoNaoPodeSerNegativo("Preço Unitário", PrecoUnitario);
             CampoNumericoMaiorQueZero("Qtd. Estoque", QtdEmEstoque);
             CampoNumericoNaoPodeSerNegativo("Qtd. Estoque", QtdEmEstoque);
-            EntidadeObrigatoria("Unidade de Medidad", UnidadeDeMedida);
+            EntidadeObrigatoria("Unidade de Medidada", UnidadeDeMedida);
             EntidadeObrigatoria("Categoria", Categoria);
             ListaObrigatoria("Fotos", Fotos);
             CampoJahDefinido(Repository.NomeConferenciaExiste(this), nameof(Descricao), Descricao);

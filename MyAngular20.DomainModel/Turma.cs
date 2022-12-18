@@ -21,6 +21,7 @@ namespace MyAngular20.DomainModel
             CampoTextoObrigatorio(nameof(Nome), Nome);
             EntidadeObrigatoria(nameof(Curso), Curso);
             CampoTextoObrigatorio(nameof(Ano), Ano);
+            
             base.Validar();
         }
 
