@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MyAngular20.ApplicationService.Facades
 {
-    internal class CategoriaFacade : ICategoriaFacade
+    public class CategoriaFacade : ICategoriaFacade
     {
         private readonly IRepository _repository;
 
