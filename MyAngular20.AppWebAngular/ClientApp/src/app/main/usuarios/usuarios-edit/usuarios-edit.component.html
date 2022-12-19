@@ -8,17 +8,23 @@
 <form #formUsuario="ngForm">
   <mat-form-field class="ffied" appearance="fill">
     <mat-label>Nome Completo:</mat-label>
-    <input matInput name="nomeCompleto" [(ngModel)]="entity.nomeCompleto" required>
+    <input matInput #nomeCompleto name="nomeCompleto" [(ngModel)]="entity.nomeCompleto" required>
+    <mat-error>campo obrigatório</mat-error>
+    <mat-hint align="end">{{ nomeCompleto.value.length }} / 50</mat-hint>
   </mat-form-field>
 
   <mat-form-field class="ffied" appearance="fill">
     <mat-label>User Name:</mat-label>
-    <input matInput name="usuarioNome" [(ngModel)]="entity.usuarioNome" required>
+    <input matInput #usuarioNome name="usuarioNome" [(ngModel)]="entity.usuarioNome" required>
+    <mat-error>campo obrigatório</mat-error>
+    <mat-hint align="end">{{ usuarioNome.value.length }} / 50</mat-hint>
   </mat-form-field>
 
   <mat-form-field class="ffied" appearance="fill">
     <mat-label>Email:</mat-label>
-    <input matInput name="email" [(ngModel)]="entity.email" required>
+    <input matInput #email name="email" [(ngModel)]="entity.email" required>
+    <mat-error>campo obrigatório</mat-error>
+    <mat-hint align="end">{{ email.value.length }} / 50</mat-hint>
   </mat-form-field>
 
   <mat-form-field class="ffied" appearance="fill">
@@ -31,15 +37,18 @@
         <span>user</span>
       </mat-option>
     </mat-select>
+    <mat-error>campo obrigatório</mat-error>
   </mat-form-field>
   <div *ngIf="entity.id === 0">
     <mat-form-field class="ffied" appearance="fill">
       <mat-label>Senha:</mat-label>
       <input matInput name="senha" [(ngModel)]="entity.senha" required>
+      <mat-error>campo obrigatório</mat-error>
     </mat-form-field>
     <mat-form-field class="ffied" appearance="fill">
       <mat-label>Confirma Senha:</mat-label>
       <input matInput name="confirmaSenha" [(ngModel)]="entity.confirmaSenha" required>
+      <mat-error>campo obrigatório</mat-error>
     </mat-form-field>
   </div>
   <p><mat-checkbox color="primary" name="ativo"  [(ngModel)]="entity.ativo">Ativo</mat-checkbox></p>

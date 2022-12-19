@@ -22,18 +22,27 @@ export class ClientesEditComponent implements OnInit {
   ngOnInit(): void {
     let id = this.activedRoute.snapshot.params['id'];
     if (id !== "0") {
-      this.service.obterPor(id).subscribe((result) => { this.entity = Object.assign(new ClienteView(), result) });
+      this.service.obterPor(id)
+        .then((result) => {
+          this.entity = Object.assign(new ClienteView(), result)
+        });
     }
 
   }
 
-  salvar(): void {
+  async salvar(): Promise<void> {
 
     try {
       this.erros = [];
       this.entity.validar();
-      this.service.salvar(this.entity).subscribe((result) => { this.resultado = result },
-        (err) => { this.erros = err.error.slice(0, -1).split(';') }, () => { this.limpar() });
+
+      await this.service.salvar(this.entity)
+        .then((result) => {
+          this.resultado = result;
+          this.limpar()
+        }, (err) => {
+          this.erros = err.error.slice(0, -1).split(';');
+        });
 
     } catch (e: any) {
       this.erros = e.message.slice(0, -1).split(';');
@@ -44,10 +53,22 @@ export class ClientesEditComponent implements OnInit {
   private limpar(): void {
 
     if (this.entity.id > 0)
-      this.router.navigate(['main/categorias/list']);
+      this.router.navigate(['main/clientes/list']);
     else if (this.erros.length === 0) {
       this.openSnackBar("registro criado com sucesso!")
       this.entity = new ClienteView();
+    }
+  }
+
+  apenasAlfanumericos(event: any) {
+
+    let inp = String.fromCharCode(event.keyCode);
+
+    if (/[a-zA-Z0-9 ]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
     }
   }
 
@@ -63,6 +84,6 @@ export class ClientesEditComponent implements OnInit {
     });
   }
 
-  
+
 
 }

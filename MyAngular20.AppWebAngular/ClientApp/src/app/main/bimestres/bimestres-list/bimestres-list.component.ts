@@ -30,9 +30,9 @@ export class BimestresListComponent implements OnInit, AfterViewInit {
 
   }
 
-  carregarDados(pageIndex: number, pageSize: number) {
+ async carregarDados(pageIndex: number, pageSize: number) {
 
-    this.service.obterPaginado(pageIndex, pageSize).pipe(tap(dados => { this.paginador = dados })).subscribe((result) => { this.exibir() });
+   await this.service.obterPaginado(pageIndex, pageSize).then(dados => { this.paginador = dados; this.exibir() }, (err) => { console.log(err) });
 
   }
 
@@ -48,7 +48,7 @@ export class BimestresListComponent implements OnInit, AfterViewInit {
 
   private excluir(result: any, id: number) {
     if (result !== "true") return;
-    this.service.excluir(id).subscribe((result) => { }, (err) => { }, () => { this.carregarDados(this.paginator.pageIndex, this.paginator.pageSize) });
+    this.service.excluir(id).then((result) => { this.carregarDados(this.paginator.pageIndex, this.paginator.pageSize) }, (err) => { console.log(err) });
   }
 
   ngAfterViewInit(): void {

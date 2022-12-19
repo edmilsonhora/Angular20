@@ -29,9 +29,9 @@ export class UsuariosListComponent implements OnInit {
 
   }
 
-  carregarDados(pageIndex: number, pageSize: number) {
+ async carregarDados(pageIndex: number, pageSize: number) {
 
-    this.service.obterPaginado(pageIndex, pageSize).pipe(tap(dados => { this.paginador = dados })).subscribe((result) => { this.exibir() });
+   await this.service.obterPaginado(pageIndex, pageSize).then(dados => { this.paginador = dados; this.exibir() }, (error) => { console.log(error) });//.pipe(tap(dados => { this.paginador = dados })).subscribe((result) => { this.exibir() });
 
   }
 

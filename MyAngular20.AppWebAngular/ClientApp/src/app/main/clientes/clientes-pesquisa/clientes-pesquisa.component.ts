@@ -16,13 +16,15 @@ export class ClientesPesquisaComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<ClientesPesquisaComponent>, private service : ClientesService) { }
 
   ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
+  
   }
 
-  pesquisar(event: any): void {
+ async pesquisar(event: any) {
     this.list = [];
     if (this.item.nome.length > 1) {
-      this.service.obterPorNome(this.item.nome).subscribe((result) => { this.list = result }, (err) => { });
-    };
+     await this.service.obterPorNome(this.item.nome).then((result) => { this.list = result }, (err) => { });
+    }
   }
 
   //seleciona(): void {

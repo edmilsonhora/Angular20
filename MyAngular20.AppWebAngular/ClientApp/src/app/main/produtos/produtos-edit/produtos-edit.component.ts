@@ -14,7 +14,7 @@ import { UnidadesService } from '../../../services/unidades.service';
   templateUrl: './produtos-edit.component.html',
   styleUrls: ['./produtos-edit.component.css']
 })
-export class ProdutosEditComponent implements OnInit, AfterViewInit {
+export class ProdutosEditComponent implements OnInit {
 
   erros: string[] = [];
   showFileUpload: boolean = true;
@@ -38,11 +38,7 @@ export class ProdutosEditComponent implements OnInit, AfterViewInit {
     this.unidadeService.obterTodos().subscribe((result) => { this.unidadesList = result });
 
   }
-
-  ngAfterViewInit(): void {
-
-
-  }
+    
 
   onFileSelected(event: any) {
 
@@ -52,19 +48,21 @@ export class ProdutosEditComponent implements OnInit, AfterViewInit {
 
   }
 
-  onUpload() {
+  onUpload(): void {
 
     try {
 
+      this.erros = [];
+      this.entity.validar();
+
       const fd: FormData = new FormData();
 
-      for (var i = 0; i < this.selectedFile.length; i++) {
+      for (let i = 0; i < this.selectedFile.length; i++) {
         let item = this.selectedFile[i];
         fd.append("imagem" + i, item, item.name);
       }
 
-      this.erros = [];
-      this.entity.validar();
+      
       fd.append("produto", JSON.stringify(this.entity));
 
       this.service.salvar(fd).subscribe((result) => { this.resultado = result },

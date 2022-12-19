@@ -34,7 +34,7 @@ export class UsuarioView {
     if (this.atualizadoPor === "")
       regrasQuebradas += "O campo Atualizado Por é obrigatório.;";
     if (this.senha !== this.confirmaSenha)
-      regrasQuebradas != "Senha e Confirma Senha não conferem.;";
+      regrasQuebradas += "Senha e Confirma Senha não conferem.;";
 
     if (this.id === 0) {
       if (this.senha === "")

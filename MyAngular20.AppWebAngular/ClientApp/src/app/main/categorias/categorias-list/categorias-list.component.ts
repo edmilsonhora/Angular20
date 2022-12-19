@@ -29,9 +29,9 @@ export class CategoriasListComponent implements OnInit, AfterViewInit {
     
   }
 
-  carregarDados(pageIndex: number, pageSize: number) {
+ async carregarDados(pageIndex: number, pageSize: number) {
 
-    this.service.obterPaginado(pageIndex, pageSize).pipe(tap(dados => { this.paginador = dados })).subscribe((result) => { this.exibir()});
+   await this.service.obterPaginado(pageIndex, pageSize).then(dados => { this.paginador = dados; this.exibir() }, (error) => { console.log(error) });
     
   }
 
@@ -45,9 +45,9 @@ export class CategoriasListComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe((result) => { this.excluir(result, item.id) });     
   }
 
-  private excluir(result: any, id: number) {
-    if(result !== "true") return;
-    this.service.excluir(id).subscribe((result) => { }, (err) => { }, () => { this.carregarDados(this.paginator.pageIndex, this.paginator.pageSize) });
+  private async excluir(result: any, id: number) {
+    if (result !== "true") return;
+    await this.service.excluir(id).then((result) => { this.carregarDados(this.paginator.pageIndex, this.paginator.pageSize) }, (err) => { });
   }
 
   ngAfterViewInit(): void {

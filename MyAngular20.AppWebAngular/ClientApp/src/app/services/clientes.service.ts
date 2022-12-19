@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { baseUrl } from '../../environments/environment';
 import { ClienteView } from '../models/cliente-view';
 import { PaginadorListas } from '../models/paginador-listas';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,26 +16,30 @@ export class ClientesService {
     return this.http.get<ClienteView[]>(baseUrl + "clientes/obterTodos");
   }
 
-  obterPaginado(pageIndex: number, pageSize: number) {
-    return this.http.get<PaginadorListas<ClienteView[]>>(baseUrl + "clientes/obterPaginado/" + pageIndex + "/" + pageSize);
+  async obterPaginado(pageIndex: number, pageSize: number): Promise<PaginadorListas<ClienteView[]>> {
+    let httpResponse = this.http.get<PaginadorListas<ClienteView[]>>(baseUrl + "clientes/obterPaginado/" + pageIndex + "/" + pageSize);
+    return firstValueFrom(httpResponse);
   }
 
-  salvar(entity: ClienteView) {
-    return this.http.post<ClienteView>(baseUrl + "clientes/salvar", entity);
+  async salvar(entity: ClienteView): Promise<any> {
+    let httpResponse = this.http.post<ClienteView>(baseUrl + "clientes/salvar", entity);
+    return firstValueFrom(httpResponse);
 
   }
 
-  excluir(id: number) {
-
-    return this.http.delete(baseUrl + "clientes/excluir/" + id);
+ async excluir(id: number):Promise<any> {
+    let httpResponse = this.http.delete(baseUrl + "clientes/excluir/" + id);
+    return firstValueFrom(httpResponse);
   }
 
-  obterPor(id: number) {
-    return this.http.get<ClienteView>(baseUrl + "clientes/obterPor/" + id);
+  async obterPor(id: number): Promise<ClienteView> {
+    let httpResponse = this.http.get<ClienteView>(baseUrl + "clientes/obterPor/" + id);
+    return firstValueFrom(httpResponse);
   }
 
-  obterPorNome(nome: string) {
+  async obterPorNome(nome: string): Promise<ClienteView[]> {
 
-    return this.http.get<ClienteView[]>(baseUrl + "clientes/obterPorNome/" + nome);
+    let httpResponse = this.http.get<ClienteView[]>(baseUrl + "clientes/obterPorNome/" + nome);
+    return firstValueFrom(httpResponse);
   }
 }
